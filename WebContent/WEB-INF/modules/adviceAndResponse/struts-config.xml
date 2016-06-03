@@ -1,0 +1,16 @@
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/adviceAndResponse" namespace="/pages/adviceAndResponse" extends="global">
+		<action name="myAdviceandResponse" class="cn.grgbanking.feeltm.myadvice.webapp.AdviceAndResponseAction">
+			<result name="query">/pages/adviceAndResponse/show.jsp</result>
+			<result name="add">/pages/adviceAndResponse/add.jsp</result>
+			<result name="modify">/pages/adviceAndResponse/modify.jsp</result>
+			<!-- <result name="delete">/pages/adviceAndResponse/delete.jsp</result> -->
+			<!-- <result name="update">/pages/adviceAndResponse/show.jsp</result> -->
+			<result name="details">/pages/adviceAndResponse/detail.jsp</result>
+			 <result name="msgBox">/WEB-INF/common/msgBox.jsp</result> 
+		</action>
+	</package>
+</struts>

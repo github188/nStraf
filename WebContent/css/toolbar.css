@@ -1,0 +1,65 @@
+﻿@charset "utf-8";
+#bottom_div{
+width: auto;
+height: 150px;
+background-color: #b9d1ea;
+clear:both;
+}
+
+#toolbar {
+margin:0;
+padding:1px 0;width:100%;
+background-image:url(toolbar/back.gif);
+background-repeat:repeat-x;
+border-bottom:1px solid #8B919F;
+}
+
+#toolbar ul {
+line-height:26px;
+list-style:none;
+margin:0;
+padding:0 20px 0 10px;
+
+}
+
+#toolbar li {
+display:inline;
+padding:0;
+color:#738AD6;
+}
+#toolbar .tixing{
+padding:2px;
+background:url(../image/tip.gif) no-repeat 0 0;padding-left:20px;
+}
+#toolbar a {
+color:#000; /* 默认链接颜色 */
+float:left;
+padding:0 3px 0 3px; /* left.png 需要3px */ 
+text-decoration:none;
+}
+
+#toolbar a span {
+display:block;
+float:none;
+padding:0 10px 0 7px;
+}
+
+#toolbar a span img {
+border:none;
+margin:4px 4px 0 0;
+}
+
+/* 鼠标移上去时显示图片 */
+#toolbar a:hover,#toolbar .current a{
+background: url(toolbar/left.png) no-repeat left center;
+color:#FFF;
+}
+
+#toolbar a:hover span,#toolbar .current a span {
+background:url(toolbar/right.png) no-repeat right center;
+}
+
+#toolbar a.right {
+float:right; /* 帮助，要浮动到右边 */
+padding-right:30px;
+}

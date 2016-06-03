@@ -1,0 +1,59 @@
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/certification" namespace="/pages/certification" extends="global">
+		<action name="cerinfo"  
+			class="cn.grgbanking.feeltm.resource.webapp.CertificationAction">
+			<result name="input">/pages/certification/list.jsp</result>
+			<result name="query">/pages/certification/list.jsp</result>
+			<result name="edit">/pages/certification/edit.jsp</result>
+			<result name="add">/pages/certification/add.jsp</result>
+			<result name="show">/pages/certification/show.jsp</result>
+			
+		</action>
+		<!--<action name="atminfo"
+			class="cn.grgbanking.feeltm.resource.webapp.AtmAction">
+			<result name="input">/pages/atm/list.jsp</result>
+			<result name="query">/pages/atm/list.jsp</result>
+			<result name="edit">/pages/atm/edit.jsp</result>
+			<result name="add">/pages/atm/add.jsp</result>
+			<result name="show">/pages/atm/show.jsp</result>
+			<result name="info">/pages/atm/info.jsp</result>
+			<result name="addConfig">/pages/atm/addConfig.jsp</result>
+			<result name="showConfig">/pages/atm/showConfig.jsp</result>
+			
+			<result name="addVersion">/pages/atm/addVersion.jsp</result>
+			<result name="showVersion">/pages/atm/showVersion.jsp</result>
+			
+			<result name="showLogs">/pages/atm/showLogs.jsp</result>
+			<result name="showLogs1">/pages/atm/showLogs1.jsp</result>
+			
+		</action>-->
+		<!--
+
+		<action name="repeatRegulation"
+			class="cn.grgbanking.feeltm.rule.webapp.RepeatRegulationAction">
+			<result name="query">/pages/rule/repeatRegulation_list.jsp</result>
+			<result name="edit">/pages/rule/repeatRegulation_edit.jsp</result>
+			<result name="add">/pages/rule/repeatRegulation_add.jsp</result>
+			<result name="show">/pages/rule/repeatRegulation_show.jsp</result>
+			<result name="info">/pages/rule/repeatRegulation_info.jsp</result>
+		</action>
+
+		<action name="specialRegulation"
+			class="cn.grgbanking.feeltm.rule.webapp.SpecialRegulationAction">
+			<result name="query">/pages/rule/specialRegulation_list.jsp</result>
+			<result name="edit">/pages/rule/specialRegulation_edit.jsp</result>
+			<result name="add">/pages/rule/specialRegulation_add.jsp</result>
+			<result name="show">/pages/rule/specialRegulation_show.jsp</result>
+		</action>
+
+		<action name="regulationDeliver"
+			class="cn.grgbanking.feeltm.rule.webapp.RegulationDeliverAction">
+			<result name="query">/pages/rule/regulationDeliver_list.jsp</result>
+			<result name="show">/pages/rule/regulationDeliver_show.jsp</result>
+		</action>
+	--></package>
+</struts>
+

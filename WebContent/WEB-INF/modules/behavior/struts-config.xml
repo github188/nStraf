@@ -1,0 +1,19 @@
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<package name="/pages/behavior" namespace="/pages/behavior" extends="global">
+		<action name="behaviorinfo"
+			class="cn.grgbanking.feeltm.report.webapp.BehaviorAction">
+			<result name="input">/pages/behavior/behavior_list.jsp</result>
+			<result name="query">/pages/behavior/behavior_list.jsp</result>
+			<result name="edit">/pages/behavior/behavior_edit.jsp</result>
+			<result name="add">/pages/behavior/behavior_add.jsp</result>
+			<result name="add_manage">/pages/behavior/behavior_add_manage.jsp</result>
+			<result name="show">/pages/behavior/behavior_show.jsp</result>
+		</action>
+	</package>
+	
+</struts>
+

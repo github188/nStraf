@@ -1,0 +1,17 @@
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/finance" namespace="/pages/finance" extends="global">
+		<action name="financeinfo"
+			class="cn.grgbanking.feeltm.finance.webapp.FinanceAction">
+			<result name="input">/pages/finance/list.jsp</result>
+			<result name="query">/pages/finance/list.jsp</result>
+			<result name="edit">/pages/finance/edit.jsp</result>
+			<result name="add">/pages/finance/add.jsp</result>
+			<result name="show">/pages/finance/show.jsp</result>
+			<result name="balance">/pages/finance/balance.jsp</result>
+		</action>
+	</package>
+</struts>
+

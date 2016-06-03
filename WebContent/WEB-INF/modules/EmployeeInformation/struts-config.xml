@@ -1,0 +1,14 @@
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/EmployeeInformation" namespace="/pages/EmployeeInformation" extends="global">
+		<action name="EmployeeInformationinfo" class="cn.grgbanking.feeltm.EmployeeInformation.webapp.EmployeeInformationAction">
+			<result name="query">/pages/EmployeeInformation/list.jsp</result>
+			<result name="input">/pages/EmployeeInformation/list.jsp</result>
+			<result name="add">/pages/EmployeeInformation/addbaseinformation.jsp</result>
+			<result name="add">/pages/EmployeeInformation/addworkinginformation.jsp</result>
+		</action>
+	</package>
+</struts>
+

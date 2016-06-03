@@ -1,0 +1,21 @@
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/SysUser" namespace="/pages/SysUser" extends="global">
+		<action name="SysUserinfo"
+			class="cn.grgbanking.feeltm.SysUser.webapp.SysUserAction">
+			<result name="query">/pages/SysUser/list.jsp</result>
+			<result name="input">/pages/SysUser/list.jsp</result>
+			<result name="edit">/pages/SysUser/edit.jsp</result>
+			<result name="show">/pages/SysUser/show.jsp</result>
+
+			<result name="editworkinginformation">/pages/SysUser/editworkinginformation.jsp</result>
+			<result name="showworkinginformation">/pages/SysUser/showworkinginformation.jsp</result>
+
+			<result name="editotherinformation">/pages/SysUser/editotherinformation.jsp</result>
+			<result name="showotherinformation">/pages/SysUser/showotherinformation.jsp</result>
+		</action>
+	</package>
+</struts>
+

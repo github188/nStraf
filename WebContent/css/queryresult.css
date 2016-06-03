@@ -1,0 +1,5 @@
+ body, td, p {font-family:Verdana; line-height:150%}
+ table {FONT-SIZE:12px; WIDTH:500px; BORDER:#999999 1px solid; background-color:#cccccc; display:block}
+ tr {background-color:#e8e8e8}
+ td.title {FONT-WEIGHT: bold; FONT-SIZE: 14px; font-style:normal; color:white; background-color:#999999; height:30}
+ td.title_2 {FONT-WEIGHT: bold; FONT-SIZE: 12px; font-style:normal; color:gray; background-color:#cccccc; height:20}

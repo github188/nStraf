@@ -1,0 +1,20 @@
+
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/prjrisk" namespace="/pages/prjrisk" extends="global">
+		<action name="prjriskinfo"
+			class="cn.grgbanking.feeltm.prjrisk.webapp.PrjRiskAction">
+			<result name="query">/pages/prjrisk/list.jsp</result>
+			<result name="edit">/pages/prjrisk/edit.jsp</result>
+			<result name="edit_manage">/pages/prjrisk/edit_manage.jsp</result>
+			<result name="edit_hrmanage">/pages/prjrisk/edit_hrmanage.jsp</result>
+		    <result name="edit_handleman">/pages/prjrisk/edit_handleman.jsp</result>
+			<result name="add">/pages/prjrisk/add.jsp</result>
+			<result name="add_manage">/pages/prjrisk/add_manage.jsp</result>
+			<result name="show">/pages/prjrisk/show.jsp</result>
+		</action>
+	</package>
+</struts>
+

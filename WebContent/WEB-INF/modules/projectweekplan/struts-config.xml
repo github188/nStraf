@@ -1,0 +1,14 @@
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/projectweekplan" namespace="/pages/projectweekplan" extends="global">
+		<action name="projectweekplanInfo" class="cn.grgbanking.feeltm.projectweekplan.webapp.ProjectWeekPlanAction">
+			<result name="list">/pages/projectweekplan/list.jsp</result>
+			<result name="add">/pages/projectweekplan/add.jsp</result>
+			<result name="show">/pages/projectweekplan/show.jsp</result>
+			<result name="edit">/pages/projectweekplan/edit.jsp</result>
+		</action>
+	</package>
+</struts>
+

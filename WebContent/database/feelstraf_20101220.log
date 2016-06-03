@@ -1,0 +1,76 @@
+
+连接到: Oracle Database 10g Enterprise Edition Release 10.2.0.1.0 - Production
+With the Partitioning, OLAP and Data Mining options
+已导出 ZHS16GBK 字符集和 AL16UTF16 NCHAR 字符集
+
+即将导出指定的用户...
+. 正在导出 pre-schema 过程对象和操作
+. 正在导出用户 FEELSTRAF 的外部函数库名
+. 导出 PUBLIC 类型同义词
+. 正在导出专用类型同义词
+. 正在导出用户 FEELSTRAF 的对象类型定义
+即将导出 FEELSTRAF 的对象...
+. 正在导出数据库链接
+. 正在导出序号
+. 正在导出簇定义
+. 即将导出 FEELSTRAF 的表通过常规路径...
+. . 正在导出表                      AUDIT_INFO导出了           0 行
+. . 正在导出表                       AUDIT_LOG导出了           0 行
+. . 正在导出表                BLACK_REGULATION导出了           0 行
+. . 正在导出表                  BUS_LEAVEAPPLY导出了           0 行
+. . 正在导出表                BUS_LEAVEAPPROVE导出了           0 行
+. . 正在导出表                       GEOG_AREA导出了           1 行
+. . 正在导出表                   MENU_FUNCTION导出了         965 行
+. . 正在导出表                       MENU_INFO导出了          45 行
+. . 正在导出表                    MENU_OPERATE导出了          21 行
+. . 正在导出表                  MENU_READ_FREQ导出了           0 行
+. . 正在导出表                  MENU_READ_ROLE导出了           0 行
+. . 正在导出表                        ORG_INFO导出了        1899 行
+. . 正在导出表                  OS_CURRENTSTEP导出了           0 行
+. . 正在导出表             OS_CURRENTSTEP_PREV导出了           0 行
+. . 正在导出表                        OS_GROUP导出了           7 行
+. . 正在导出表                  OS_HISTORYSTEP导出了           0 行
+. . 正在导出表             OS_HISTORYSTEP_PREV导出了           0 行
+. . 正在导出表                   OS_MEMBERSHIP导出了           7 行
+. . 正在导出表                OS_PROPERTYENTRY导出了           0 行
+. . 正在导出表                         OS_USER导出了           7 行
+. . 正在导出表                      OS_WFENTRY导出了           0 行
+. . 正在导出表              REGULATION_DELIVER导出了           0 行
+. . 正在导出表               REPEAT_REGULATION导出了           0 行
+. . 正在导出表              SPECIAL_REGULATION导出了           0 行
+. . 正在导出表                     SYS_DATADIR导出了         153 行
+. . 正在导出表                   SYS_LOGIN_LOG导出了           0 行
+. . 正在导出表                    SYS_OPER_LOG导出了           0 行
+. . 正在导出表                        SYS_USER导出了           4 行
+. . 正在导出表                        TML_INFO导出了           0 行
+. . 正在导出表              TRANS_BANKNOTE_SEQ导出了           0 行
+. . 正在导出表          TRANS_BANKNOTE_SEQ_HIS导出了           0 行
+. . 正在导出表         TRANS_BANKNOTE_SEQ_HOUR导出了           0 行
+. . 正在导出表                  TRANS_HIS_INFO导出了           0 行
+. . 正在导出表                 TRANS_HOUR_INFO导出了           0 行
+. . 正在导出表                   TRAN_ABNOINFO导出了           0 行
+. . 正在导出表          TRAN_CALLBACK_ABNOINFO导出了           0 行
+. . 正在导出表                 TRAN_ESPECIINFO导出了           0 行
+. . 正在导出表                       TRAN_INFO导出了           0 行
+. . 正在导出表                       USR_GROUP导出了           4 行
+. . 正在导出表                     USR_GRPROLE导出了           5 行
+. . 正在导出表                        USR_ROLE导出了           4 行
+. . 正在导出表                    USR_ROLEFUNC导出了         140 行
+. . 正在导出表                      USR_USRGRP导出了           5 行
+. 正在导出同义词
+. 正在导出视图
+. 正在导出存储过程
+. 正在导出运算符
+. 正在导出引用完整性约束条件
+. 正在导出触发器
+. 正在导出索引类型
+. 正在导出位图, 功能性索引和可扩展索引
+. 正在导出后期表活动
+. 正在导出实体化视图
+. 正在导出快照日志
+. 正在导出作业队列
+. 正在导出刷新组和子组
+. 正在导出维
+. 正在导出 post-schema 过程对象和操作
+. 正在导出统计信息
+成功终止导出, 没有出现警告。

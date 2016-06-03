@@ -1,0 +1,28 @@
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/menu"  namespace="/pages/menu" extends="global">
+		<action name="MenuInfo"  class="cn.grgbanking.feeltm.menu.webapp.MenuInfoAction">
+			<result name="list">/pages/menu/menuInfoList.jsp</result>
+			<result name="add">/pages/menu/menuInfoEdit.jsp</result> 	
+			<result name="update">/pages/menu/menuInfoEdit.jsp</result>
+			<!--<result name="updateOperate">/pages/menu/menuOperateUpdate.jsp</result>--> 	
+			<result name="setting">/pages/menu/menuFunction.jsp</result> 	
+			<result name="msgBox">/WEB-INF/common/msgBox.jsp</result>
+		</action>
+		
+		<action name="MenuInfoSort"  class="cn.grgbanking.feeltm.menu.webapp.MenuInfoAction">
+			<result name="sort">/pages/menu/menuInfoSort.jsp</result>
+		</action>
+		
+		<action name="MenuOperate" class="cn.grgbanking.feeltm.menu.webapp.MenuOperateAction">
+			<result name="list">/pages/menu/menuOperateMain.jsp</result>
+			<result name="add">/pages/menu/menuOperateEdit.jsp</result>
+			<result name="update">/pages/menu/menuOperateUpdate.jsp</result>
+			<result name="msgBox">/WEB-INF/common/msgBox.jsp</result>
+		</action>
+		
+	</package>
+</struts>
+

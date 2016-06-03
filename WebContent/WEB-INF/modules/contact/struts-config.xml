@@ -1,0 +1,23 @@
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/contact" namespace="/pages/contact" extends="global">
+		<action name="contactAction"  class="cn.grgbanking.feeltm.contact.webapp.ContactAction" >
+			<result name="listsuccess">/pages/contact/contactInfoList.jsp</result>
+			<result name="query">/pages/contact/contactInfoList.jsp</result>
+			<result name="input">/pages/contact/contactInfoList.jsp</result>
+			<result name="add" >/pages/contact/contactInfoAdd.jsp  </result>
+			<result name="edit">/pages/contact/contactInfoEdit.jsp</result>
+			<result name="download">/pages/contact/xia.jsp</result>
+			
+			<!-- <result type="stream" name="download">
+				<param name=""></param>
+				<param name="contentDisposition">attachment;filename=${filename }.xls</param>
+			 	<param name="inputName">downloadFile</param>
+			 </result> -->
+		</action>
+	</package>
+	
+	<constant name="struts.ui.theme" value="simple"></constant>
+</struts>

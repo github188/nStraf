@@ -1,0 +1,44 @@
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/day" namespace="/pages/day" extends="global">
+		<action name="reportinfo"
+			class="cn.grgbanking.feeltm.report.webapp.ReportDayAction">
+			<result name="input">/pages/day/report_list.jsp</result>
+			<result name="query">/pages/day/report_list.jsp</result>
+			<result name="querySummary">/pages/day/report_summary.jsp</result>
+			<result name="edit">/pages/day/report_edit.jsp</result>
+			<result name="add">/pages/day/report_add.jsp</result>
+			<result name="show">/pages/day/report_show.jsp</result>
+			<result name="info">/pages/day/report_info.jsp</result>
+			<result name="current_month_static">/pages/day/report_static.jsp</result>
+			<result name="static">/pages/day/report_static.jsp</result>
+			<result name="workSummary">/pages/day/report_worksummary.jsp</result>
+		</action><!--
+
+		<action name="repeatRegulation"
+			class="cn.grgbanking.feeltm.rule.webapp.RepeatRegulationAction">
+			<result name="query">/pages/rule/repeatRegulation_list.jsp</result>
+			<result name="edit">/pages/rule/repeatRegulation_edit.jsp</result>
+			<result name="add">/pages/rule/repeatRegulation_add.jsp</result>
+			<result name="show">/pages/rule/repeatRegulation_show.jsp</result>
+			<result name="info">/pages/rule/repeatRegulation_info.jsp</result>
+		</action>
+
+		<action name="specialRegulation"
+			class="cn.grgbanking.feeltm.rule.webapp.SpecialRegulationAction">
+			<result name="query">/pages/rule/specialRegulation_list.jsp</result>
+			<result name="edit">/pages/rule/specialRegulation_edit.jsp</result>
+			<result name="add">/pages/rule/specialRegulation_add.jsp</result>
+			<result name="show">/pages/rule/specialRegulation_show.jsp</result>
+		</action>
+
+		<action name="regulationDeliver"
+			class="cn.grgbanking.feeltm.rule.webapp.RegulationDeliverAction">
+			<result name="query">/pages/rule/regulationDeliver_list.jsp</result>
+			<result name="show">/pages/rule/regulationDeliver_show.jsp</result>
+		</action>
+	--></package>
+</struts>
+

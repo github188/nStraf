@@ -1,0 +1,14 @@
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/attendance" namespace="/pages/attendance" extends="global">
+		<action name="attendanceAction" class="cn.grgbanking.feeltm.attendance.webapp.AttendanceAction">
+			<result name="input">/pages/attendance/list.jsp</result>
+			<result name="allinput">/pages/attendance/company_list.jsp</result>
+			<result name="expenseInput">/pages/attendance/expenseList.jsp</result>
+			<result name="worksummary">/pages/attendance/workSummaryList.jsp</result>
+		</action>
+	</package>
+</struts>
+

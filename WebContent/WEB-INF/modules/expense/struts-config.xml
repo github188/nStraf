@@ -1,0 +1,30 @@
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/expense" namespace="/pages/expense" extends="global">
+		<action name="expenseInfo" class="cn.grgbanking.feeltm.expense.webapp.ExpenseInfoAction">
+			<result name="list">/pages/expense/expenseInfo_list.jsp</result>
+			<result name="add">/pages/expense/expenseInfo_add.jsp</result>
+			<result name="edit">/pages/expense/expenseInfo_edit.jsp</result>
+			<result name="showCostDetail">/pages/expense/expenseInfo_edit.jsp</result>
+			<result name="showAddDetail">/pages/expense/expenseInfo_add.jsp</result>
+			<result name="audit">/pages/expense/audit.jsp</result>
+			<result name="view">/pages/expense/view.jsp</result>
+			<result name="error">/pages/expense/error.jsp</result>
+			 <result name="download" type="stream">  
+                <param name="contentType">application/octet-stream;charset=ISO8859-1</param>  
+                <param name="inputName">inputStream</param>  
+                <!--  使用经过转码的文件名作为下载文件名，downloadFileName属性  
+               		 对应action类中的方法 getDownloadFileName()  -->
+                <param name="contentDisposition">attachment;filename="${downloadFileName}"</param>  
+                <param name="bufferSize">4096</param>  
+            </result>  
+            <result name="finAudit">/pages/expense/FinAudit.jsp</result>
+            <result name="printExpenseDetail">/pages/expense/expenseInfo_printDetail.jsp</result>
+            <result name="printExpenseCost">/pages/expense/expenseInfo_printCost.jsp</result>
+		</action>
+	</package>
+	
+	<constant name="struts.ui.theme" value="simple"></constant>
+</struts>

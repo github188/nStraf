@@ -1,0 +1,11 @@
+#! /usr/bin/expect  
+
+spawn su tomcat
+
+expect "*]$*"
+
+send "/usr/local/tomcat/webapps/phbank/shell/start_tomcat.sh\r"   
+
+expect "*]$*"  
+
+send "exit\r"

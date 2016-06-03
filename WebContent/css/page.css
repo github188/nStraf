@@ -1,0 +1,59 @@
+.menu {
+	cursor: hand;
+	vertical-align: middle;
+	text-valign: middle;
+	text-align: center;
+	filter: alpha(opacity =         100);
+	font-size: 18px;
+	height: 33px;
+	
+}
+
+.label {
+	font-size: 12px;
+	color: #000000;
+}
+
+.footer {
+	font-size: 12px;
+	color: #ffffff;
+}
+
+body {
+	background-color: #6998ce;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	font-size: 12px;
+	color: #6998ce;
+}
+
+input {
+	font-size: 12px;
+	text-align: center;
+}
+
+select {
+	font-size: 12px;
+	text-align: center;
+}
+
+.xxx {
+	overflow: hidden;
+}
+
+a {
+	font-size: 12px;
+}
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+a:active {
+	text-decoration: none;
+}

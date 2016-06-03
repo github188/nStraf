@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<service id="remoting-service" 
+    class="flex.messaging.services.RemotingService">
+
+    <adapters>
+        <adapter-definition id="java-object" class="flex.messaging.services.remoting.adapters.JavaAdapter" default="true"/>
+    </adapters>
+
+    <default-channels>
+        <channel ref="my-amf"/>
+    </default-channels>
+    <!--通过spring得到类的实例--> 
+    <!--  
+<destination  id ="flowAuditingService">      
+      <properties >      
+      <factory>spring</factory>
+         <source>flowAuditingDao</source>          
+</properties > 
+</destination>
+-->
+<!-- 
+<destination id="helloWorld">
+
+       <properties> 
+
+           <source>cn.grgbanking.feeltm.util.HelloWorld </source> 
+           <scope>application</scope> 
+       </properties> 
+
+    </destination>
+
+ -->
+
+<destination id="hello"> <properties> <source>Hello</source> </properties> </destination>
+
+
+</service>

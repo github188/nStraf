@@ -1,0 +1,18 @@
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/staff"  namespace="/pages/staff" extends="global">
+		<action name="staffInfo"  class="cn.grgbanking.feeltm.staff.webapp.StaffInfoAction">
+			<result name="list" >/pages/staff/staffinfolist.jsp</result>
+			<result name="addpage" >/pages/staff/add.jsp</result>
+			<result name="modifyPage" >/pages/staff/modify.jsp</result>
+			<result name="hrmodify" >/pages/staff/hrmodify.jsp</result>
+			<result name="view">/pages/staff/view.jsp</result> 	
+			<result name="msgBox">/WEB-INF/common/msgBox.jsp</result>
+			<result name="person">/pages/staff/person.jsp</result>
+		</action>
+	</package>
+		
+</struts>
+

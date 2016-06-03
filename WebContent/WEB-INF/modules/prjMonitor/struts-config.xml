@@ -1,0 +1,13 @@
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/prjMonitor"  namespace="/pages/prjMonitor" extends="global">
+		<action name="staffAlloc"  class="cn.grgbanking.feeltm.prjMonitor.webapp.PrjMonitorAction">
+			<result name="staffAllocPage">/pages/prjMonitor/staffAlloc.jsp</result>
+		</action>
+		<action name="colorSettings"  class="cn.grgbanking.feeltm.prjMonitor.webapp.ColorSettingAction">
+			<result name="colorSettingPage">/pages/prjMonitor/colorSettings.jsp</result>
+		</action>
+	</package>
+</struts>

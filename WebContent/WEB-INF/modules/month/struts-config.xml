@@ -1,0 +1,40 @@
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/month" namespace="/pages/month" extends="global">
+		<action name="monthinfo"
+			class="cn.grgbanking.feeltm.report.webapp.MonthReportAction">
+			<result name="input">/pages/month/month_list.jsp</result>
+			<result name="query">/pages/month/month_list.jsp</result>
+			<result name="edit">/pages/month/month_edit.jsp</result>
+			<result name="add">/pages/month/month_add.jsp</result>
+			<result name="show">/pages/month/month_show.jsp</result>
+			<result name="info">/pages/month/month_info.jsp</result>
+		</action><!--
+
+		<action name="repeatRegulation"
+			class="cn.grgbanking.feeltm.rule.webapp.RepeatRegulationAction">
+			<result name="query">/pages/rule/repeatRegulation_list.jsp</result>
+			<result name="edit">/pages/rule/repeatRegulation_edit.jsp</result>
+			<result name="add">/pages/rule/repeatRegulation_add.jsp</result>
+			<result name="show">/pages/rule/repeatRegulation_show.jsp</result>
+			<result name="info">/pages/rule/repeatRegulation_info.jsp</result>
+		</action>
+
+		<action name="specialRegulation"
+			class="cn.grgbanking.feeltm.rule.webapp.SpecialRegulationAction">
+			<result name="query">/pages/rule/specialRegulation_list.jsp</result>
+			<result name="edit">/pages/rule/specialRegulation_edit.jsp</result>
+			<result name="add">/pages/rule/specialRegulation_add.jsp</result>
+			<result name="show">/pages/rule/specialRegulation_show.jsp</result>
+		</action>
+
+		<action name="regulationDeliver"
+			class="cn.grgbanking.feeltm.rule.webapp.RegulationDeliverAction">
+			<result name="query">/pages/rule/regulationDeliver_list.jsp</result>
+			<result name="show">/pages/rule/regulationDeliver_show.jsp</result>
+		</action>
+	--></package>
+</struts>
+

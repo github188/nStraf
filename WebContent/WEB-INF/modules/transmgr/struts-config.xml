@@ -1,0 +1,19 @@
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/transmgr" namespace="/pages/transmgr" extends="global">
+		<action name="TransMgr" class="cn.grgbanking.feeltm.transmgr.webapp.TransMgrAction">
+			<result name="query">/pages/transmgr/tranInfo_list.jsp</result>
+			<result name="show">/pages/transmgr/tranInfo_show.jsp</result>
+		</action>
+
+		<action name="transBanknoteSeq" class="cn.grgbanking.feeltm.transmgr.webapp.TransBanknoteSeqAction">
+			<result name="query">/pages/transmgr/transBanknoteSeq_list.jsp</result>
+			<result name="show">/pages/transmgr/tranInfo_show.jsp</result>
+			<result name="showPic">/pages/transmgr/transBanknoteSeq_showPic.jsp</result>
+		</action>
+
+	</package>
+</struts>
+

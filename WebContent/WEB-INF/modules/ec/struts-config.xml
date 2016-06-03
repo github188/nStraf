@@ -1,0 +1,18 @@
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/ec" namespace="/pages/ec" extends="global">
+		<action name="ecinfo"
+			class="cn.grgbanking.feeltm.study.webapp.EmployCourseAction">
+			<result name="input">/pages/ec/list.jsp</result>
+			<result name="query">/pages/ec/list.jsp</result>
+			<result name="edit">/pages/ec/edit.jsp</result>
+			<result name="add">/pages/ec/add.jsp</result>
+			<result name="show">/pages/ec/show.jsp</result>
+			<result name="info">/pages/ec/info.jsp</result>
+		</action>
+	
+	</package>
+</struts>
+

@@ -1,0 +1,18 @@
+
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/suggestion" namespace="/pages/suggestion" extends="global">
+		<action name="suggestioninfo"
+			class="cn.grgbanking.feeltm.report.webapp.SuggestionAction">
+			<result name="query">/pages/suggestion/list.jsp</result>
+			<result name="edit">/pages/suggestion/edit.jsp</result>
+			<result name="edit_manage">/pages/suggestion/edit_manage.jsp</result>
+		    <result name="edit_headman">/pages/suggestion/edit_headman.jsp</result>
+			<result name="add">/pages/suggestion/add.jsp</result>
+			<result name="show">/pages/suggestion/show.jsp</result>
+		</action>
+	</package>
+</struts>
+

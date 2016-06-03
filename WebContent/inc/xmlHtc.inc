@@ -1,0 +1,29 @@
+<STYLE>
+.dataDir{
+  behavior:url(<%=request.getContextPath()%>/htc/xmlSelect.htc);
+}
+.tmlBrand{
+	behavior:url(<%=request.getContextPath()%>/htc/xmlSelect.htc);
+}
+.tmlType{
+	behavior:url(<%=request.getContextPath()%>/htc/xmlSelect.htc);
+}
+.termid{
+	behavior:url(<%=request.getContextPath()%>/htc/xmlSelect.htc);
+}
+.orgid{
+	behavior:url(<%=request.getContextPath()%>/htc/xmlSelect.htc);
+}
+.areaid{
+	behavior:url(<%=request.getContextPath()%>/htc/xmlSelect.htc);
+}
+.profitActor{
+	behavior:url(<%=request.getContextPath()%>/htc/xmlSelect.htc);
+}
+.profitRule{
+	behavior:url(<%=request.getContextPath()%>/htc/xmlSelect.htc);
+}
+.examindex{
+  behavior:url(<%=request.getContextPath()%>/htc/xmlSelect.htc);
+}
+</STYLE>

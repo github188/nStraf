@@ -1,0 +1,15 @@
+
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/autoOa" namespace="/pages/autoOa" extends="global">
+		<action name="autoOainfo" class="cn.grgbanking.feeltm.autoOa.webapp.AutoOaAction">
+			<result name="query">/pages/autoOa/list.jsp</result>
+			<result name="edit">/pages/autoOa/edit.jsp</result>
+			<result name="add">/pages/autoOa/add.jsp</result>
+			<result name="show">/pages/autoOa/show.jsp</result>
+		</action>
+	</package>
+</struts>
+

@@ -1,0 +1,18 @@
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<package name="/pages/auto" namespace="/pages/auto" extends="global">
+ 
+ <action name="autoTestExec"  class="cn.grgbanking.feeltm.auto.webapp.AutoTestAction">
+	<result name="show">/pages/auto/autoTest.jsp</result>
+	<result name="showNew">/pages/auto/autoTestNew.jsp</result>
+	<result name="list">/pages/auto/auto_list.jsp</result>
+	<result name="query">/pages/auto/auto_list.jsp</result>
+	<result name="download">/pages/auto/download.jsp</result>
+	<result name="detail">/pages/auto/auto_show.jsp</result>
+	
+  </action>
+  
+  </package>
+ </struts>

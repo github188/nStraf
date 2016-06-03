@@ -1,0 +1,287 @@
+body{ scrollbar-base-color: #F8F8F8; scrollbar-arrow-color: #6E99F3; font-size: 12px; 
+
+ }
+TD {
+	FONT-SIZE: 9pt; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"
+}
+INPUT {
+	FONT-SIZE: 9pt; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"
+}
+.InputReadOnly {
+  border-top-width:   1px;   
+  border-right-width:   1px;   
+  border-bottom-width:   1px;   
+  border-left-width:   1px;   
+  border-top-style:   solid;   
+  border-right-style:   solid;   
+  border-bottom-style:   solid;   
+  border-left-style:   solid;   
+  border-top-color:   #204998;   
+  border-right-color:   #204998;   
+  border-bottom-color:   #204998;   
+  border-left-color:   #204998;   
+	BACKGROUND-COLOR: Silver;
+	COLOR: #204998;
+	FONT-SIZE: 9pt;
+}
+.smalf {
+	FONT-SIZE: 8pt; COLOR: #000000; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"
+}
+.smalf2 {
+	FONT-SIZE: 8px; COLOR: #cccccc; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"
+}
+A {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+ A:hover {
+	COLOR: #336699; TEXT-DECORATION: none
+}  
+.navigation{
+	COLOR: #336699;TEXT-DECORATION: none
+}
+a.navigation:hover {
+	COLOR: #b18311
+}
+.changecor1{
+	BACKGROUND-COLOR: 7FA0C2;
+}
+.smalfbg {
+	FONT-SIZE: 8pt; COLOR: #ffffff; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; BACKGROUND-COLOR: #adadad
+}
+.nbg {
+	BACKGROUND-COLOR: #404040
+}
+.shadow {
+	FILTER: DropShadow(Color=#999999, OffX=2, OffY=2, Positive=1); LINE-HEIGHT: 14pt
+}
+.tables {
+	BORDER-RIGHT: 1px dotted; BORDER-TOP: 1px dotted; BORDER-LEFT: 1px dotted; BORDER-BOTTOM: 1px dotted
+}
+.smalfbg2 {
+	FONT-SIZE: 8pt; COLOR: #000000; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; BACKGROUND-COLOR: #ff9900
+}
+.bt {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px
+}
+.cts {
+	FONT-WEIGHT: bold; COLOR: #006699; BACKGROUND-COLOR: #e4e4e4
+}
+.ubb_quote {
+	BORDER-RIGHT: black 0px solid; BORDER-TOP: #999999 1px solid; BORDER-LEFT: #999999 1px solid; COLOR: #666666; BORDER-BOTTOM: black 0px solid; BACKGROUND-COLOR: #f3f3f3
+}
+.ubb_code {
+	BORDER-RIGHT: black 0px dotted; BORDER-TOP: #999999 1px dotted; BORDER-LEFT: #999999 1px dotted; COLOR: #666666; BORDER-BOTTOM: black 0px dotted; BACKGROUND-COLOR: #f3f3f3
+}
+.ubb_move {
+	
+}
+.ubb_fly {
+	
+}
+.boldblue{COLOR: #204998;font-weight:bold;}
+.hd {
+	CURSOR: hand
+}
+.tea {
+	FONT-SIZE: 8pt; COLOR: #999999; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; BACKGROUND-COLOR: #ffffff
+}
+.rd {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; FONT-SIZE: 9pt; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"
+}
+.dt {
+	BORDER-RIGHT: #666666 1px solid; BORDER-TOP: #666666 1px solid; FILTER: Alpha(Opacity=50, FinishOpacity=100, Style=1, StartX=0, StartY=0, FinishX=0, FinishY=0)?, StartX=2, StartY=0, FinishX=0, FinishY=0); BORDER-LEFT: #666666 1px solid; BORDER-BOTTOM: #666666 1px solid
+}
+.bgg {
+	BACKGROUND-COLOR: #999999
+}
+.nnbbgg {
+	BACKGROUND-COLOR: #006699
+}
+.bdl {
+	BORDER-RIGHT: #999999 1px dashed; BORDER-TOP: #999999 1px dashed; BORDER-LEFT: #999999 1px dashed; BORDER-BOTTOM: #999999 1px dashed
+}
+.lf {
+	MARGIN-TOP: 4px; FONT-WEIGHT: bolder; FONT-SIZE: 16px; COLOR: #003300; MARGIN-RIGHT: 4px; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; BACKGROUND-COLOR: #f9f9f9
+}
+
+.oracletdone{
+	background-color: #fffffd;
+}
+.oracletdtwo{
+	BACKGROUND-COLOR: #e8ecef;
+}
+
+.trClass0{
+	background-color: #fffffd;nowrap;
+}
+.trClass1{
+	BACKGROUND-COLOR: #fbf9f4;nowrap;
+}
+.trMouseOver{
+	BACKGROUND-COLOR: #fcedc3;
+}
+.oracolumncenterheader {
+	background:url(../images_new/main/listarea/columncenterheader.jpg);
+	height:25px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	color:#ffffff;
+	text-align: center;
+}
+.orarowheader {
+	background-color: White;
+	color: #336699;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	border-bottom-color: #336699;
+	border-bottom-style: inset;
+	border-bottom-width: 3px;
+	border-collapse: separate;
+}
+.orarowhead
+{
+font-size:12px; color: #336699; text-align : left; font-weight : bold;  height:20;
+font-family: "Arial, Helvetica, sans-serif";
+}
+.nav_outline {
+ BORDER-RIGHT: #CCCCCC 1px solid; BORDER-TOP: #CCCCCC 1px solid;
+ BORDER-LEFT: #CCCCCC 1px solid; BORDER-BOTTOM: #CCCCCC 1px solid;
+  BACKGROUND-COLOR: #ffffff
+}
+input.nav_input { 
+                   BORDER-RIGHT: 0px;
+                   BORDER-TOP: 0px; 
+                   BORDER-LEFT: 0px; 
+                   BORDER-BOTTOM: #000000 1px solid
+                   FONT-SIZE: 9pt; 
+                   BACKGROUND: none transparent scroll repeat 0% 0%;
+                   WIDTH:30px;
+                   HEIGHT: 16px; 
+                   LINE-HEIGHT: normal
+}   
+.tablebg{
+	background: #000066;
+}
+input.underLine { BORDER-RIGHT: 0px; 
+                  BORDER-TOP: 0px; 
+                  FONT-SIZE: 9pt; 
+                  BACKGROUND: none transparent scroll repeat 0% 0%; 
+                  BORDER-LEFT: 0px; 
+                  COLOR: BLACK; 
+                  BORDER-BOTTOM: #000000 1px solid}
+.color1{
+	background-color: #F5FFFA;
+	color: #336699;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+}
+.selectTableBackground{
+
+}
+.basicButton{
+height:23;padding-top:0;
+	background-image: url(/nStraf/images_new/htc/btnbg.jpg);
+	background-repeat: repeat-x;repeat-y;
+	cursor:hand;
+}
+.popnewdialog1{
+	background: url(../images/main/table_bg.gif) repeat-x;
+	background-position: center;
+}
+.popnewdialog2{
+ background-color:#eeaf93;
+}
+.bgbuttonselect{
+	height:30px;
+	background:url(../images_new/main/listarea/listtop.jpg);
+	color: #336699;
+}
+.input_label{
+	text-align:right;
+	font-weight: 600;
+	white-space:nowrap;
+}
+.input_readonly{
+	text-align:center;
+	background-color: #FFFFFF;
+	white-space:nowrap;
+}
+.input_writable{
+	background-color: #FFFFFF;
+}
+.input_label2{
+	text-align: center;
+	background-color: #FFFFFF;
+	white-space:nowrap;
+	width: 15%;
+}
+.column_label{
+	background-color:#5286B8;
+	color:#FFFFFF;
+	white-space:nowrap;
+	font-weight: normal;
+	text-align: center;
+	width: 10%;
+}
+.input_table{
+	width:100%;
+	background-color:#E6E6E6;
+	background-image:url(../images_new/main/listarea/listtop2.png);
+	background-position:top;
+	background-repeat:repeat-x;
+	border-right:1px solid #CCCCCC;
+	border-left:1px solid #CCCCCC;
+	border-top:none;
+	border-bottom:2px solid #CCCCCC;
+}
+.input_tablehead{
+	color: #336699;
+	height: 28px;
+	white-space: nowrap;
+	}
+.input_tablehead2{
+	color: #336699;
+	background-color: #CCCCCC;
+	height: 28px;
+	white-space: nowrap;
+	}
+.select_area{
+	margin-top:5px;
+	margin-left:5px;
+	height:auto;
+}
+.user_info_banner{
+	margin-top:10px;
+	background-color:#5286B8;
+	color:#FFFFFF;
+}
+/* .text_area{
+	border:none;
+	border-right: 2px solid #CCCCCC;
+} */
+.select_button{
+	border: none;
+}
+#downloadList{table-layout:fixed;}
+#downloadList td ,#downloadList td *{
+	/* word-wrap: break-word; 
+	word-break: break-all; */
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+}
+#downloadList td::first-child{
+	width:2%;
+}
+.scrollFeild{
+	overflow-y:scroll;
+	height:400px;
+}
+.scrollFeild-loginfo{
+	overflow-y:scroll;
+	height:100px;
+}

@@ -1,0 +1,17 @@
+
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/kpipoint" namespace="/pages/kpipoint" extends="global">
+		<action name="kpipointinfo" class="cn.grgbanking.feeltm.kpipoint.webapp.KpiPointAction">
+			<result name="query">/pages/kpipoint/list.jsp</result>
+			<result name="edit">/pages/kpipoint/edit.jsp</result>
+			<result name="edit_headman">/pages/kpipoint/edit_headman.jsp</result>
+			<result name="add">/pages/kpipoint/add.jsp</result>
+			<result name="up">/pages/kpipoint/uplock.jsp</result>
+			<result name="show">/pages/kpipoint/show.jsp</result>
+		</action>
+	</package>
+</struts>
+

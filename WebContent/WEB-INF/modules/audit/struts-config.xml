@@ -1,0 +1,22 @@
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<package name="/pages/audit"  namespace="/pages/audit" extends="global">
+ <action name="auditInfo"  class="cn.grgbanking.feeltm.audit.webapp.AuditInfoAction">
+   <result name="query" >/pages/audit/auditInfo_list.jsp</result> 
+   <result name="edit" >/pages/audit/auditInfo_edit.jsp</result> 
+   <result name="add" >/pages/audit/auditInfo_add.jsp</result> 
+   <result name="show" >/pages/audit/auditInfo_show.jsp</result> 
+   <result name="audit" >/pages/audit/auditflow_audit.jsp</result> 
+  </action>
+  
+  
+  <action name="auditLog"  class="cn.grgbanking.feeltm.audit.webapp.AuditLogAction">
+   <result name="query" >/pages/audit/auditLog_list.jsp</result> 
+   <result name="edit" >/pages/audit/auditLog_edit.jsp</result> 
+   <result name="add" >/pages/audit/auditLog_add.jsp</result> 
+   <result name="show" >/pages/audit/auditLog_show.jsp</result> 
+  </action>
+  </package>
+ </struts>

@@ -1,0 +1,19 @@
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/analyse" namespace="/pages/analyse" extends="global">
+		<action name="accountAction" class="cn.grgbanking.feeltm.analyse.webapp.AccountAction">
+			<result name="query">/pages/analyse/account_list.jsp</result>
+		</action>
+
+		<action name="tmlAction" class="cn.grgbanking.feeltm.analyse.webapp.TmlAction">
+			<result name="list">/pages/analyse/tml_list.jsp</result>
+		</action>
+		
+		<action name="blReguAction" class="cn.grgbanking.feeltm.analyse.webapp.BlReguAction">
+			<result name="list">/pages/analyse/blRegu_list.jsp</result>
+		</action>
+	</package>
+</struts>
+

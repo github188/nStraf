@@ -1,0 +1,15 @@
+<form-validation>
+	<formset>
+		<form name="orgInfoForm">
+		<field property="orgid" depends="required">
+				<arg0 key="check.orgid" />
+		</field>
+		<field property="orgname" depends="required">
+			<arg0 key="check.orgname" />
+		</field>
+		<field property="orgfullname" depends="required">
+			<arg0 key="check.orgfullname" />
+		</field>
+		</form>
+	</formset>
+</form-validation>

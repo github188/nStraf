@@ -1,0 +1,11 @@
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="commonPlatform/personalHome" namespace="" extends="global">
+		<action name="personalHomeInfo" class="cn.grgbanking.commonPlatform.personalHome.webapp.PersonalHomeAction">
+			<result name="personalHome">/personalHome.jsp</result>
+		</action>
+	</package>
+</struts>
+

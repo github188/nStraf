@@ -1,0 +1,14 @@
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/projectplan" namespace="/pages/projectplan" extends="global">
+		<action name="projectplanInfo" class="cn.grgbanking.feeltm.projectPlan.webapp.ProjectPlanAction">
+			<result name="projectList">/pages/projectplan/projectList.jsp</result>
+			<result name="projectAdd">/pages/projectplan/projectAdd.jsp</result>
+			<result name="projectShow">/pages/projectplan/projectShow.jsp</result>
+			<result name="projectEdit">/pages/projectplan/projectEdit.jsp</result>
+		</action>
+	</package>
+</struts>
+

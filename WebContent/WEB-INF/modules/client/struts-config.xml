@@ -1,0 +1,14 @@
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/client"  namespace="/pages/client" extends="global">
+		<action name="clientUpload"  class="cn.grgbanking.feeltm.client.webapp.ClientUploadAction">
+			<result name="list" >/pages/client/list.jsp</result>
+			<result name="toUpload">/pages/client/upload.jsp</result>
+			<result name="msgBox">/WEB-INF/common/msgBox.jsp</result>
+		</action>
+	</package>
+	<constant name="struts.multipart.maxSize" value="9999999999"/> 	
+</struts>
+

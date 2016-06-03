@@ -1,0 +1,54 @@
+<HTML><BODY>﻿
+<script language="JavaScript" src="/calendar/fixDate.js"></script>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HEAD>
+<TITLE> 日期选择 </TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=utf－8">
+<STYLE type=text/css>A {
+	COLOR: #000000; FONT-SIZE: 10pt; TEXT-DECORATION: none
+}
+.country {
+	FONT-SIZE: 9pt; LETTER-SPACING: 2px; LINE-HEIGHT: 12pt
+}
+A:hover {
+	COLOR: #367d89; TEXT-DECORATION: none
+}
+.style {
+	FONT-SIZE: 9pt; LINE-HEIGHT: 12px
+}
+.font1 {
+	FONT-SIZE: 10pt
+}
+</STYLE>
+</HEAD>
+
+
+
+<form name="frm">
+
+
+
+<INPUT TYPE="text" NAME="DTPicker1" id="dt1" size=20 onblur="reWriteDate('dt1',3)" onkeypress="return dtp_KeyFilter('date')">
+<img src="../images/share/calendar.gif" alt="Pick Date" align="absmiddle"   onMouseUp="fPopUpCalendarDlg('/calendar',DTPicker1,getType('dt1'))" style="cursor:hand" >
+
+<p align=right>
+<INPUT TYPE="text" NAME="DTPicker2" id="dt2" size=20 onblur="reWriteDate('dt2',2)" onkeypress="return dtp_KeyFilter('date')">
+<img src="../images/share/calendar.gif" alt="Pick Date" align="absmiddle"   onMouseUp="fPopUpCalendarDlg('/calendar',DTPicker2,2)" style="cursor:hand" >
+<p class=style>
+<br>&lt;INPUT TYPE=&quot;text&quot; NAME=&quot;DTPicker1&quot; id=&quot;dt1&quot; size=20 onblur=&quot;<font color="#FF0000">reWriteDate</font>('dt1',<font size="2" color="#0000FF">1</font>)&quot; 
+onkeypress=&quot;return <font color="#FF0000">dtp_KeyFilter</font>('date')&quot;&gt;<br>
+&lt;img src=&quot;images/share/calendar.gif&quot; alt=&quot;Pick Date&quot; align=&quot;absmiddle&quot; onMouseUp=&quot;<font color="#FF0000">fPopUpCalendarDlg</font>(<font color="#FF00FF">'javascript</font><font color="#FF00FF">'</font>,DTPicker1<font color="#0000FF">,1</font>)&quot; 
+style=&quot;cursor:hand&quot; width=&quot;16&quot; height=&quot;16&quot;&gt;<p>
+注意，类型要一致，就是说，rewriteDate里的类型要和fPopUpCalendarDlg的类型要一样<p>
+由于是放在网页里面，所以fPopUpCalendarDlg中‘javascript’‘代表的是当前页面与放js的目录的相对路径。<br><br><br><br><br>
+<p align=right>
+
+<INPUT TYPE="text" NAME="DTPicker3" id="dt3" size=20 onblur="reWriteDate('dt3',1)" onkeypress="return dtp_KeyFilter('date')">
+<img src="../images/share/calendar.gif" alt="Pick Date" align="absmiddle"   onMouseUp="fPopUpCalendarDlg('/calendar',DTPicker3,1)" style="cursor:hand" >
+</p>
+
+<INPUT TYPE="text" NAME="DTPicker4" id="dt4" size=20 onblur="reWriteDate('dt4',1)" onkeypress="return dtp_KeyFilter('date')">
+<img src="../images/share/calendar.gif" alt="Pick Date" align="absmiddle"   onMouseUp="fPopUpCalendarDlg('/calendar',DTPicker4,1)" style="cursor:hand" >
+</form>
+</BODY></HTML>

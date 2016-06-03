@@ -1,0 +1,26 @@
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/daylog" namespace="/pages/daylog" extends="global">
+		<action name="logInfo" class="cn.grgbanking.feeltm.dayLog.webApp.DayLogAction">
+			<result name="query">/pages/daylog/list.jsp</result>
+			<result name="edit">/pages/daylog/edit.jsp</result>
+			<result name="add">/pages/daylog/add.jsp</result>
+			<result name="show">/pages/daylog/show.jsp</result>
+			<result name="audit">/pages/daylog/audit.jsp</result>
+			<result name="remark">/pages/daylog/remark.jsp</result>
+			<result name="export">/pages/daylog/export.jsp</result>
+			<result name="projectSelect">/pages/daylog/projectSelect.jsp</result>
+			<result name="deptSelect">/pages/daylog/deptSelect.jsp</result>
+			<result name="workEnter">/pages/daylog/workEnter.jsp</result>
+			
+			<!-- 注意这里的转发页面 ！！
+				2016年3月24日15:18:24
+				@author zzwen6
+			 -->
+			<result name="list">/pages/prjMonitor/list.jsp</result>
+		</action>
+	</package>
+</struts>
+

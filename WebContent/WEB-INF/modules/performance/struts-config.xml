@@ -1,0 +1,18 @@
+
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/performance" namespace="/pages/performance" extends="global">
+		<action name="performanceinfo" class="cn.grgbanking.feeltm.performance.webapp.PerformanceAction">
+			<result name="query">/pages/performance/list.jsp</result>
+			<result name="edit">/pages/performance/edit.jsp</result>
+			<result name="edit_manage">/pages/performance/edit_manage.jsp</result>
+		    <result name="edit_headman">/pages/performance/edit_headman.jsp</result>
+			<result name="add">/pages/performance/add.jsp</result>
+			<result name="up">/pages/performance/uplock.jsp</result>
+			<result name="show">/pages/performance/show.jsp</result>
+		</action>
+	</package>
+</struts>
+

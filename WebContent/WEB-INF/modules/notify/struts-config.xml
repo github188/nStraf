@@ -1,0 +1,18 @@
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/notify"  namespace="/pages/notify" extends="global">
+		<action name="notifyInfo"  class="cn.grgbanking.feeltm.notify.webapp.NotifyAction">
+			<result name="list" >/pages/notify/list.jsp</result>
+			<result name="add" >/pages/notify/add.jsp</result>
+			<result name="select" >/pages/common/selectUser.jsp</result>
+			<result name="modify" >/pages/notify/modify.jsp</result>
+			<result name="audit" >/pages/notify/audit.jsp</result>
+			<result name="view" >/pages/notify/view.jsp</result>
+			<result name="msgBox">/WEB-INF/common/msgBox.jsp</result>
+		</action>
+	</package>
+		
+</struts>
+

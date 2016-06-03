@@ -1,0 +1,15 @@
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/logmgr"  namespace="/pages/logmgr" extends="global">
+		<action name="sysOperLog"  class="cn.grgbanking.feeltm.logmgr.webapp.SysOperLogAction">
+
+			<result name="list">/pages/logmgr/operLogQuery.jsp</result> 	
+					
+		</action>
+
+	</package>
+</struts>
+	
+

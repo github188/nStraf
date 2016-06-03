@@ -1,0 +1,17 @@
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/leave"  namespace="/pages/leave" extends="global">
+		<action name="leaveInfo"  class="cn.grgbanking.feeltm.leave.webapp.LeaveAction">
+			<result name="list" >/pages/leave/list.jsp</result>
+			<result name="view" >/pages/leave/detail.jsp</result>
+			<result name="add" >/pages/leave/add.jsp</result>
+			<result name="modify" >/pages/leave/modify.jsp</result>
+			<result name="audit" >/pages/leave/audit.jsp</result>
+			<result name="msgBox">/WEB-INF/common/msgBox.jsp</result>
+		</action>
+	</package>
+		
+</struts>
+

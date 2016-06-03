@@ -1,0 +1,28 @@
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/project"  namespace="/pages/project" extends="global">
+		
+		 <action  name="project" class="cn.grgbanking.feeltm.project.webapp.ProjectAction">    
+		      <result name="list">/pages/project/list.jsp</result>
+		      <result name="add">/pages/project/add_project.jsp</result>
+		      <result name="view">/pages/project/detail.jsp</result>
+		      <result name="select">/pages/project/select.jsp</result>
+		      <result name="modify">/pages/project/update_project.jsp</result>
+		      <result name="msgBox">/WEB-INF/common/msgBox.jsp</result>
+		      <result name="selectuser">/pages/project/selectuser.jsp</result>
+		      <result name="selectmanager">/pages/project/selectmanager.jsp</result>
+		      <result name="distribution">/pages/project/distribution.jsp</result>
+		      <result name="viewDistribution">/pages/project/viewDistribution.jsp</result>
+		      <result name="historylist">/pages/project/history_list.jsp</result>
+	     </action>   
+	     
+	</package>
+	<package name="solveModifyEx" namespace="/" extends="global">
+	   <action  name="project" class="cn.grgbanking.feeltm.project.webapp.ProjectAction">    
+		      <result name="selectuser">/pages/project/selectuser.jsp</result>	     
+	     </action> 
+	</package>
+</struts>
+

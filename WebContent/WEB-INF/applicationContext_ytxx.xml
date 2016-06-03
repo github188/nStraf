@@ -1,0 +1,582 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd"
+	default-lazy-init="true">
+	<!-- 使用annotation 自动注册bean,并保证@Required,@Autowired的属性被注入 -->
+
+	<context:component-scan base-package="cn.grgbanking" />
+
+	<bean id="signRecordTimeQuartz"
+		class="cn.grgbanking.feeltm.signrecord.webapp.SignRecordTimeQuartz"></bean>
+	<!-- 23.57发送给上面领导的定时器   -->
+	<bean id="logListenerTimeQuartz"
+		class="cn.grgbanking.feeltm.loglistener.webapp.LogListenerAction"></bean>
+	<!-- 16.30 用户未填写日志的提醒日志 -->
+	<bean id="logListenerTimeQuartz2"
+		class="cn.grgbanking.feeltm.loglistener.webapp.LogListenerAction"></bean>
+	<bean id="updateUserProjectTimeQuartz2"
+		class="cn.grgbanking.feeltm.project.webapp.UserProjectUpdateListener"></bean>
+	<bean id="initNewUserListenerTimeQuartz" class="cn.grgbanking.feeltm.staff.webapp.StaffInfoAction"></bean>
+	<bean id="personDayUpdateBean" class="cn.grgbanking.feeltm.config.CommonData"></bean>
+	<bean id="monthlyManager" class="cn.grgbanking.feeltm.config.CommonData"></bean>
+	<bean id="synchronizateSignToCardQuartz" class="cn.grgbanking.feeltm.signrecord.webapp.SignRecordAction"></bean>
+	<bean id="updateAttendanceStatusManager" class="cn.grgbanking.feeltm.config.CommonData"></bean>
+	<bean id="deptMonthPersonDay" class="cn.grgbanking.feeltm.config.CommonData"></bean>
+	<bean id="repayTimeQuartz" class="cn.grgbanking.feeltm.borrow.webapp.BorrowAction"></bean>
+	<bean id="confirmHourGroupmanageQuartz" class="cn.grgbanking.feeltm.dayLog.webApp.DayLogAction"></bean>
+	<bean id="confirmHourDeptmanageQuartz" class="cn.grgbanking.feeltm.dayLog.webApp.DayLogAction"></bean>
+	<bean id="sendDeptCostAndDeptUserCostQuartz" class="cn.grgbanking.feeltm.costControl.action.GeneralCostControlAction"></bean>	
+	<bean id="prjChanceManagerListener" class="cn.grgbanking.feeltm.prjchance.webapp.SendEmailToFollowPeopleAction"></bean>
+	<bean id="workLoadStatisticTimeQuartz" class="cn.grgbanking.feeltm.workloadstatistics.webapp.WorkloadStatisticAction"></bean>
+	<!-- 9.30发给部门经理和项目管理部的 -->
+	<bean id="daylogDayStaticListenerTimeQuartz" class="cn.grgbanking.feeltm.daylogStatic.webapp.DaylogStaticAction"></bean>
+	
+	<bean id="tempRequestEhrListenerTimeQuartz" class="cn.grgbanking.feeltm.staff.service.TempRequestEhrService"></bean>
+	<bean id="dboaBackUpBean" class="cn.grgbanking.feeltm.dboaBack.FtpDownloadDboa"></bean>
+	<bean id="holidayService" class="cn.grgbanking.feeltm.holiday.service.HolidayService"></bean>
+	
+	<!-- 定时获取地理位置 ,每隔60分钟执行一次-->
+	<bean id="signRecords"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"
+
+		lazy-init="false">
+		<property name="targetObject">
+			<ref bean="signRecordTimeQuartz" />
+		</property>
+		<property name="targetMethod" value="getAddressTime" />
+		<!-- <property name="concurrent" value="false"/> -->
+	</bean>
+
+	<bean id="signRecordTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean"
+		lazy-init="false">
+		<property name="jobDetail">
+			<ref bean="signRecords" />
+		</property>
+		<property name="cronExpression">
+			<!-- 每过60分钟 -->
+			<value>0 0/60 * * * ?</value>
+		</property>
+	</bean>
+
+
+	<!-- 定时监控日志（发送给领导的） -->
+	<bean id="logListenerForLeader"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"
+		lazy-init="false">
+		<property name="targetObject">
+			<ref bean="logListenerTimeQuartz" />
+		</property>
+		<property name="targetMethod" value="sendEmailForLeader" />
+	</bean>
+
+	<bean id="logListenerTriggerForLeader" class="org.springframework.scheduling.quartz.CronTriggerBean"
+		lazy-init="false">
+		<property name="jobDetail">
+			<ref bean="logListenerForLeader" />
+		</property>
+		<property name="cronExpression">
+			   <value>0 57 23 * * ?</value> 
+			  <!-- <value>0 0/2 * * * ?</value>  -->
+		</property>
+	</bean>
+
+	<!-- 定时监控日志（发送给用户） -->
+	<!-- 发送邮件 -->
+	<bean id="logListenerForUserSendEmail"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"
+		lazy-init="false">
+		<property name="targetObject">
+			<ref bean="logListenerTimeQuartz2" />
+		</property>
+		<property name="targetMethod" value="sendEmailAndSaveLog2User" />
+	</bean>
+	<!-- 发送微信 -->
+	<bean id="logListenerForUserSendWechat"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"
+		lazy-init="false">
+		<property name="targetObject">
+			<ref bean="logListenerTimeQuartz2" />
+		</property>
+		<property name="targetMethod" value="sendWechatAndSaveLog2User" />
+	</bean>
+	<bean id="logListenerTriggerForUser1" class="org.springframework.scheduling.quartz.CronTriggerBean"
+		lazy-init="false">
+		<property name="jobDetail">
+			<ref bean="logListenerForUserSendEmail" />
+		</property>
+		<property name="cronExpression">
+ 				 <!--  <value>0 30 16 * * ?</value>  --> 
+ 				  <value>0 30 16 * * ?</value>  
+		</property>
+	</bean>
+	<!-- 时段4.30  发送微信 -->
+	<bean id="logListenerTriggerForUser2" class="org.springframework.scheduling.quartz.CronTriggerBean"
+		lazy-init="false">
+		<property name="jobDetail">
+			<ref bean="logListenerForUserSendWechat" />
+		</property>
+		<property name="cronExpression">
+		    <value>0 35 16 * * ?</value>		    
+		</property>
+	</bean>
+	<!-- 时段7.30  发送微信 -->
+	<bean id="logListenerTriggerForUser3" class="org.springframework.scheduling.quartz.CronTriggerBean"
+		lazy-init="false">
+		<property name="jobDetail">
+			<ref bean="logListenerForUserSendWechat" />
+		</property>
+		<property name="cronExpression">
+		    <value>0 30 19 * * ?</value>
+		</property>
+	</bean>
+	<!-- 时段10.00  发送微信 -->
+	<bean id="logListenerTriggerForUser4" class="org.springframework.scheduling.quartz.CronTriggerBean"
+		lazy-init="false">
+		<property name="jobDetail">
+			<ref bean="logListenerForUserSendWechat" />
+		</property>
+		<property name="cronExpression">
+			<value>0 0 22 * * ?</value>
+		</property>
+	</bean>
+
+	<!-- 从项目人员计划中更新数据到项目人员管理表中（每晚更新一次） -->
+	<bean id="updateUserPojectListener"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"
+		lazy-init="false">
+		<property name="targetObject">
+			<ref bean="updateUserProjectTimeQuartz2" />
+		</property>
+		<property name="targetMethod" value="synchronizeUserProject" />
+	</bean>
+
+	<bean id="updateUserPojectTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean"
+		lazy-init="false">
+		<property name="jobDetail">
+			<ref bean="updateUserPojectListener" />
+		</property>
+		<property name="cronExpression">
+			<value>0 30 0 * * ?</value>
+		</property>
+	</bean>
+
+	<!-- 查询从EHR导入的新员工，修改其默认密码及用户组（每天早上6点更新） -->
+	<bean id="initNewUserListener"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"
+		lazy-init="false">
+		<property name="targetObject">
+			<ref bean="initNewUserListenerTimeQuartz" />
+		</property>
+		<property name="targetMethod" value="synSysUserFromEHR" />
+	</bean>
+
+	<bean id="initNewUser" class="org.springframework.scheduling.quartz.CronTriggerBean"
+		lazy-init="false">
+		<property name="jobDetail">
+			<ref bean="initNewUserListener" />
+		</property>
+		<property name="cronExpression">
+			  <value>0 0 6 * * ?</value>  
+			    <!-- <value>0 48 10 * * ?</value> -->   
+			 <!-- <value>0 0/2 * * * ?</value> -->
+		</property>
+	</bean>
+ <bean id="tempRequestEhrListener"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"
+		lazy-init="false">
+		<property name="targetObject">
+			<ref bean="tempRequestEhrListenerTimeQuartz" />
+		</property>
+		<property name="targetMethod" value="requestEhr" />
+	</bean>
+
+	<bean id="tempRequestEhr" class="org.springframework.scheduling.quartz.CronTriggerBean"
+		lazy-init="false">
+		<property name="jobDetail">
+			<ref bean="tempRequestEhrListener" />
+		</property>
+		<property name="cronExpression">
+				<value>0 0/1 * * * ?</value>
+		</property>
+	</bean>
+	<!-- 每月1号统计上一个月的月度数据  -->
+	<bean id="monthlyManagerListener"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"
+		lazy-init="false">
+		<property name="targetObject">
+			<ref bean="monthlyManager" />
+		</property>
+		<property name="targetMethod" value="executeMonthlyManage" />
+	</bean>
+	<bean id="monthlyManagerTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean"
+		lazy-init="false">
+		<property name="jobDetail">
+			<ref bean="monthlyManagerListener" />
+		</property>
+		<property name="cronExpression">
+			<value>0 0 5 1 * ?</value>
+		</property>
+	</bean>
+	<!-- 每月1号同步最新节假日信息  -->
+	<bean id="holidayManagerListener"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"
+		lazy-init="false">
+		<property name="targetObject">
+			<ref bean="holidayService" />
+		</property>
+		<property name="targetMethod" value="syschronizedHolidayData" />
+	</bean>
+	<bean id="holidayManagerTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean"
+		lazy-init="false">
+		<property name="jobDetail">
+			<ref bean="holidayManagerListener" />
+		</property>
+		<property name="cronExpression">
+			<value>0 10 0 1 * ?</value>
+		</property>
+	</bean>
+	
+	<!-- 每天凌晨统计考勤表的来自EHR和广发的考勤状态 ，同时将多余的考勤状态更新为-1 -->
+	<bean id="updateAttendanceStatusListener"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"
+		lazy-init="false">
+		<property name="targetObject">
+			<ref bean="updateAttendanceStatusManager" />
+		</property>
+		<property name="targetMethod" value="updateEHRGFAttendanceStatus" />
+	</bean>
+	<bean id="updateAttendanceStatusTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean"
+		lazy-init="false">
+		<property name="jobDetail">
+			<ref bean="updateAttendanceStatusListener" />
+		</property>
+		<property name="cronExpression">
+			<value>0 10 3 * * ?</value>
+			<!--<value>0 0/1 * * * ?</value>-->
+		</property>
+	</bean>
+	<!-- 每晚定时更新人日数据 -->
+	<bean id="deptMonthPersonDayUpdateListener"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"
+		lazy-init="false">
+		<property name="targetObject">
+			<ref bean="deptMonthPersonDay" />
+		</property>
+		<property name="targetMethod" value="countDeptMonthPersonDay" />
+	</bean>
+
+	<bean id="deptMonthPersonDayUpdateTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean"
+		lazy-init="false">
+		<property name="jobDetail">
+			<ref bean="deptMonthPersonDayUpdateListener" />
+		</property>
+		<property name="cronExpression">
+			  <value>0 40 2 * * ?</value> 
+		</property>
+	</bean>
+	<!-- 同步移动签到数据到考勤表中的定时器  -->
+	<bean id="signtocard"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"
+		lazy-init="false">
+		<property name="targetObject">
+			<ref bean="synchronizateSignToCardQuartz" />
+		</property>
+		<property name="targetMethod" value="synchronizateSignToCard" />
+	</bean>
+
+	<bean id="signtocardTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean"
+		lazy-init="false">
+		<property name="jobDetail">
+			<ref bean="signtocard" />
+		</property>
+		<property name="cronExpression">
+			<!-- 每天凌晨2点半同步 -->
+			<value>0 30 2 * * ?</value>
+		</property>
+	</bean>
+	<!--  还款定时器 每天8点执行 -->
+	<bean id="repay"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"
+		lazy-init="false">
+		<property name="targetObject">
+			<ref bean="repayTimeQuartz" />
+		</property>
+		<property name="targetMethod" value="synchronizateSendRepayRemind" />
+	</bean>
+
+	<bean id="repayTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean"
+		lazy-init="false">
+		<property name="jobDetail">
+			<ref bean="repay" />
+		</property>
+		<property name="cronExpression">
+			<!-- 每天8点同步 -->
+			<value>0 0 8 * * ?</value>
+		</property>
+	</bean>
+	
+	<!-- 每天12点向项目经理发送前一天日志尚未确认的提示邮件  -->
+	<!-- <bean id="confirmHourGroupmanage"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"
+		lazy-init="false">
+		<property name="targetObject">
+			<ref bean="confirmHourGroupmanageQuartz" />
+		</property>
+		<property name="targetMethod" value="sendEmailForGroupmanage" />
+	</bean>
+
+	<bean id="confirmHourGroupmanageTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean"
+		lazy-init="false">
+		<property name="jobDetail">
+			<ref bean="confirmHourGroupmanage" />
+		</property>
+		<property name="cronExpression">
+			<value>0 0 12 * * ?</value>
+		</property>
+	</bean> -->
+	
+	<!-- 每天16点向部门经理发送前一天日志尚未确认的提示邮件 -->
+	<!-- <bean id="confirmHourDeptmanage"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"
+		lazy-init="false">
+		<property name="targetObject">
+			<ref bean="confirmHourDeptmanageQuartz" />
+		</property>
+		<property name="targetMethod" value="sendEmailForDeptmanage" />
+	</bean>
+
+	<bean id="confirmHourDeptmanageTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean"
+		lazy-init="false">
+		<property name="jobDetail">
+			<ref bean="confirmHourDeptmanage" />
+		</property>
+		<property name="cronExpression">
+			<value>0 0 16 * * ?</value>
+		</property>
+	</bean> -->
+	
+	<!--   每天23.02统计前一天员工日志的确认情况 （统计部门总体确认情况和部门员工前一天的确认明细） -->
+	<bean id="statisticManagersCofrim"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"
+		lazy-init="false">
+		<property name="targetObject">
+			<ref bean="costStatisticService" />
+		</property>
+		<property name="targetMethod" value="statisticYestodayDeptCost" />
+	</bean>
+
+	<bean id="statisticManagersCofrimTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean"
+		lazy-init="false">
+		<property name="jobDetail">
+			<ref bean="statisticManagersCofrim" />
+		</property>
+		<property name="cronExpression">
+			 <value>0 2 23 * * ?</value>
+		</property>
+	</bean>
+	
+	<!--   每天23.10点向指定用户发送 定时器15统计后的数据 -->
+	<!-- <bean id="sendDeptCostAndDeptUserCost"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"
+		lazy-init="false">
+		<property name="targetObject">
+			<ref bean="sendDeptCostAndDeptUserCostQuartz" />
+		</property>
+		<property name="targetMethod" value="sendDeptCountDateToUser" />
+	</bean> -->
+
+	<!-- <bean id="sendDeptCostAndDeptUserCostTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean"
+		lazy-init="false">
+		<property name="jobDetail">
+			<ref bean="sendDeptCostAndDeptUserCost" />
+		</property>
+		<property name="cronExpression">
+			<value>0 10 23 * * ?</value>
+		</property>
+	</bean> -->
+	
+	<!-- 每天4:50 统计当月或上月（1号统计上月，其他统计当月）的项目人日情况 (需要在定时器13 之前.定时器13发送邮件时，需要从这边读取每个项目本月的人日消耗)-->
+	<bean id="personDayUpdateListener"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"
+		lazy-init="false">
+		<property name="targetObject">
+			<ref bean="personDayUpdateBean" />
+		</property>
+		<property name="targetMethod" value="countPersonDay" />
+	</bean>
+
+	<bean id="personDayUpdateTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean"
+		lazy-init="false">
+		<property name="jobDetail">
+			<ref bean="personDayUpdateListener" />
+		</property>
+		<property name="cronExpression">
+			 <value>0 50 4 * * ?</value> 
+		</property>
+	</bean>
+	
+	
+	<!-- 每隔5分钟刷新数据字典 -->
+	<bean id="refreshBusnData"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"
+		lazy-init="false">
+		<property name="targetObject">
+			<ref bean="systemQuartzExecuteService" />
+		</property>
+		<property name="targetMethod" value="refreshBusData" />
+	</bean>
+
+	<bean id="refreshBusnDataTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean"
+		lazy-init="false">
+		<property name="jobDetail">
+			<ref bean="refreshBusnData" />
+		</property>
+		<property name="cronExpression">
+			<value>0 0/5 * * * ?</value>
+		</property>
+	</bean>
+	
+	<!--   定时器21  每天早上8点   商机管理     检查是否需要 向项目跟进人及 抄送人（项目经理）发送  跟进提醒邮件  -->
+	<!--<bean id="prjChanceManager"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"
+		lazy-init="false">
+		<property name="targetObject">
+			<ref bean="prjChanceManagerListener"/>
+		</property>
+		<property name="targetMethod" value="sendEmailtofollowpeople" />
+	</bean>-->
+
+	<!--<bean id="prjChanceManagerTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean"
+		lazy-init="false">
+		<property name="jobDetail">
+			<ref bean="prjChanceManager" />
+		</property>
+		<property name="cronExpression">
+			<value>0 10 8 * * ?</value>
+		</property>
+	</bean>-->
+	
+	<!--临时 解决方案    定时器22  每周六上午10点统计本周   未填写日志 和  工作量未确认情况  邮件的接收者在数据字典中进行配置 项目监控-->
+	<bean id="workLoadStatistic"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"
+		lazy-init="false">
+		<property name="targetObject">
+			<ref bean="workLoadStatisticTimeQuartz"/>
+		</property>
+		<property name="targetMethod" value="workloadStatistic" />
+	</bean>
+
+	<bean id="workLoadStatisticTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean"
+		lazy-init="false">
+		<property name="jobDetail">
+			<ref bean="workLoadStatistic" />
+		</property>
+		<property name="cronExpression">
+			<value>0 0 10 ? * SAT</value> 
+			<!-- <value>0 0 17 * * ?</value> -->
+		</property>
+	</bean> 
+	
+	<!--每天早上9点 定时将 每个部门员工的日志详情发送给每个部门的部门经理及项目管理部  -->
+	<bean id="daylogDayStatic"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"
+		lazy-init="false">
+		<property name="targetObject">
+			<ref bean="daylogDayStaticListenerTimeQuartz" />
+		</property>
+		<property name="targetMethod" value="daylogStaticToLeader"/>
+	</bean>
+
+	<bean id="daylogDayStaticTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean"
+		lazy-init="false">
+		<property name="jobDetail">
+			<ref bean="daylogDayStatic" />
+		</property>
+		<property name="cronExpression">
+			 <value>0 0 9 * * ?</value> 
+		</property>
+	</bean>
+		<!--每天早上6点30分定时备份数据库备份文件.dmp文件  -->
+	<bean id="dboaBackUp"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"
+		lazy-init="false">
+		<property name="targetObject">
+			<ref bean="dboaBackUpBean" />
+		</property>
+		<property name="targetMethod" value="dboaBackUp"/>
+	</bean>
+
+	<bean id="dboaBackUpTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean"
+		lazy-init="false">
+		<property name="jobDetail">
+			<ref bean="dboaBackUp" />
+		</property>
+		<property name="cronExpression">
+			 <value>0 30 6 * * ?</value>
+			 <!-- <value>0 12 11 * * ?</value> -->
+		</property>
+	</bean>
+	
+	<!-- 所有执行的定时器集合 -->
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean"
+		lazy-init="false">
+		<property name="triggers">
+			<list>
+
+				 
+			    <!-- 定时器1：定时获取地理位置 ,每隔60分钟执行一次-->
+				<ref bean="signRecordTrigger" />
+				<!-- 定时器2：发送未填写日志的邮件提醒 ， 工作日16.30  执行 -->
+				<ref bean="logListenerTriggerForUser1" />
+				<!-- 定时器3：发送未填写日志的微信提醒 ， 工作日16.30  执行 -->
+				<ref bean="logListenerTriggerForUser2" />
+				<!-- 定时器4：发送未填写日志的微信提醒 ， 工作日19.30  执行 -->
+				<ref bean="logListenerTriggerForUser3" />
+				<!-- 定时器5：发送未填写日志的微信提醒 ， 工作日22.00  执行 -->
+				<ref bean="logListenerTriggerForUser4" />
+				<!-- 定时器6：统计未填写日志人员名单并发送给对应领导， 工作日23.57  执行 -->
+				<!-- <ref bean="logListenerTriggerForLeader" />  -->
+				<!-- 定时器7：将项目组成员和部门人员更新到日志监控人员中，每天 00.30执行-->
+				<ref bean="updateUserPojectTrigger" />
+				<!-- 定时器8：查看上一个工作日日志项目经理是否确认了，并发送邮件给未确认的项目经理，工作日12.00执行-->
+				<!-- <ref bean="confirmHourGroupmanageTrigger" /> -->
+				<!-- 定时器9：查看上一个工作日日志部门经理是否确认了，并发送邮件给未确认的部门经理，工作日16.00执行-->
+				<!-- <ref bean="confirmHourDeptmanageTrigger" /> -->
+				<!-- 定时器10：统计上一个工作日各部门的人日消耗总体情况和明细，并把统计数据存储到数据库，工作日 23.02执行-->
+				<!-- <ref bean="sendDeptCostAndDeptUserCostTrigger"/> -->
+				<!-- 定时器11：发送邮件给pm及其他配置人员，告知当日的各部门总体人日消耗和详细情况，工作日 23.10执行-->
+				<ref bean="statisticManagersCofrimTrigger"/>
+				<!-- 定时器12：统计本月各项目的项目人日消耗情况，每天 04.50执行-->
+				<ref bean="personDayUpdateTrigger" />
+				<!-- 定时器13：统计上一个月的月度管理报告数据，每个月1号05.00执行-->
+				<ref bean="monthlyManagerTrigger" />
+				<!-- 定时器14：对从EHR中自动同步的新员工根据其级别赋予权限，以及其他初始化操作，每天04.30执行-->
+				 <ref bean="initNewUser" />
+				<!-- 定时器15：从第三方的接口中获取下一年的国家法定假日，每个月1号00.10执行-->
+				<ref bean="holidayManagerTrigger" />
+				<!-- 定时器16：对移动签到的经纬度数据，请求百度接口，转为签到地址并判断是否在项目办公地址误差范围内，每隔60分钟执行一次-->
+				<ref bean="signtocardTrigger" />
+				<!-- 定时器17：处理当天的移动签到和考勤数据，包括判断人员是否迟到早退、标识多余签到数据等操作，每天03.10执行-->
+				<ref bean="updateAttendanceStatusTrigger" />
+				<!-- 定时器18：借款管理中，发送邮件提醒超过还款期限尚未还款的员工及时还款，每天08.00执行-->
+				<ref bean="repayTrigger" />
+				<!-- 定时器19：刷新数据字典，使得刚刚修改的配置数据及时生效，每隔5分钟执行一次-->
+				<ref bean="refreshBusnDataTrigger"/>
+				<!-- 定时器20(作废：部门人日消耗统一从成本控-部门人日明细中读取)：统计当月部门经理确认的人日数据（部门内消耗的非项目人日），每天04.20执行 -->
+				<ref bean="deptMonthPersonDayUpdateTrigger" />
+				<!--   定时器21  每天早上8点   商机管理     检查是否需要 向项目跟进人及 抄送人（项目经理）发送  跟进提醒邮件  -->
+				<!--<ref bean="prjChanceManagerTrigger"/>-->
+				 <!--零时 解决方案    定时器22  每周五统计本周 未填写日志的比例-->
+				 <ref bean="workLoadStatisticTrigger"/>  
+				 <!-- 定时器24   日志日统计 -->
+				<ref bean="daylogDayStaticTrigger"/><!-- 日志日统计 -->
+				<!-- <ref  bean="tempRequestEhr"/>  -->
+				<ref  bean="dboaBackUpTrigger"/> 
+				
+			</list>
+		</property>
+	</bean>
+</beans>

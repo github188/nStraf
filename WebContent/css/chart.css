@@ -1,0 +1,175 @@
+
+.prjTypeName {
+    font-family: Microsoft YaHei,Microsoft JhengHei;
+    font-weight: bold;
+    font-size: 18px;
+    width: 100px;
+    height: 35px;
+    text-align: center;
+    vertical-align: middle;	
+    position: absolute;
+    left:0px;
+    top:3px;
+    color: #4F5A69;
+}
+.prjTypeName_bg {
+	width:100px;
+	height:35px;
+}
+.prjArea {
+	position: relative;
+	top:0px;
+	height:60px;
+	vertical-align: middle;
+}
+.prjName {
+	width:140px;
+	height:32px;
+	position:absolute;
+	top:15px;
+	line-height:35px;
+	text-align:center;
+	vertical-align: middle;
+	font-family: Microsoft YaHei,Microsoft JhengHei;
+	font-weight:bold;
+	font-size: 16px;
+	color:#4F5A69; 
+	}
+.prjName_bg {
+	 width: 140px;
+	 height: 35px;
+	 position:absolute;
+	 top: 15px;
+	 vertical-align: middle;
+}
+.prjMgr {
+	width:60px;
+	height: 22px;
+	vertical-align: middle;
+	text-align:center;
+	position:absolute;
+	top:13px;
+	font-size:13px;
+	font-family: Microsoft YaHei,Microsoft JhengHei;
+	color: #FDFFFE;
+}
+.prjMgr_bg {
+	width: 60px; 
+	height: 22px;
+	position:absolute;
+	top:13px;
+}
+.prjMenber {
+	width: 24px; 
+	height:52px;
+	text-align:center;
+	vertical-align:middle;
+	font-size:12px;
+	font-family: Microsoft YaHei,Microsoft JhengHei;
+	color: #F7F6FB;
+	line-height: 13px;
+	width:20px; 
+	margin: 1px 0 0 1px ;
+	writing-mode:tb-rl;
+}
+.prjMenber_bg {
+	width: 22px; 
+	height: 53px;
+	margin:0px 0 0 0;
+}
+.linkArea {
+	border-spacing: 0;
+	position: relative;
+}
+
+.link_up_down{
+	 width:28px;
+	 height:14px; 
+	 margin: 0px 0px 0px 20px;
+	 display:block;
+}
+.link_exp{
+	width: 5px;
+	height:30px;
+	margin: 0px 0px 0px 20.1px;
+	display:block;
+}
+.link_middle{
+	width: 20px; 
+	height: 88px;
+	margin: 0px 0px 0px 5px;
+	display:block;
+}
+
+.link_point{
+	width:20px;
+	height:5px;
+	position:absolute;
+	top: 28px;
+	left:140px;
+}
+.menberArea {
+	position:absolute;
+	left:160px;
+	top:8px;
+	vertical-align: middle;
+}
+.deptColorTable{
+	width:50%;
+	margin:10px 0 0 10px;	
+	border:1px solid #000;
+	background-color: #ccc;
+}
+.counts_head{
+	width: 10px;
+	height: 10px;
+}
+.staffNum{
+	font-size:26px;
+	color: 323E4F;
+}
+.staffType{
+	font-size:11px;
+	color: 4F5A69;
+}
+.deptName{
+	font-size:11px;
+	color: 4F5A69;
+}
+.staffPercent{
+	font-size:10px;
+	color: 939598;
+}
+.bigbox_l{
+	width:10px;
+	background-image: url('../images_new/chart/dataMonitor/counts/bigbox_l.PNG');
+	background-repeat:no-repeat;
+}
+.bigbox_r{
+	width:30px;
+	background-image: url('../images_new/chart/dataMonitor/counts/bigbox_r.PNG');
+	background-repeat:no-repeat;
+}
+.bigbox_mid{
+	background-image: url("../images_new/chart/dataMonitor/counts/bigbox_m.PNG");
+	background-repeat: repeat-x;
+}
+.midbox_mid{
+	background-image: url("../images_new/chart/dataMonitor/counts/midbox_m.PNG");
+	background-repeat: repeat-x;	
+}
+.restStaff_bg{
+	width:55px; 
+	height:30px;
+	background-repeat: no-repeat;
+	margin:0 5px 0 0px;
+	white-space: nowrap;
+	background-size:100% 100%;
+}
+.restStaff{
+	width:55px;
+	height:25px;
+	line-height:25px;
+	text-align:center;
+	background-repeat: no-repeat;
+}

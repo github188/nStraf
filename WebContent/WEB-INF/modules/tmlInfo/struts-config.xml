@@ -1,0 +1,15 @@
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<package name="/pages/tmlInfo"  namespace="/pages/tmlInfo" extends="global">
+ <action name="tmlInfo"  class="cn.grgbanking.feeltm.tmlInfo.webapp.TmlInfoAction">
+   <result name="query" >/pages/tmlInfo/tmlInfo_list.jsp</result> 
+   <result name="edit" >/pages/tmlInfo/tmlInfo_edit.jsp</result> 
+   <result name="add" >/pages/tmlInfo/tmlInfo_add.jsp</result> 
+   <result name="show" >/pages/tmlInfo/tmlInfo_show.jsp</result>
+   <result name="selectTml">/pages/tmlInfo/tmlInfo_select.jsp</result> 
+  </action>
+  </package>
+ </struts>
+

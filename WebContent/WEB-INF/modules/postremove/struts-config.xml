@@ -1,0 +1,16 @@
+
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/postremove" namespace="/pages/postremove" extends="global">
+		<action name="postremoveinfo" class="cn.grgbanking.feeltm.postremove.webapp.PostRemoveAction">
+			<result name="query">/pages/postremove/list.jsp</result>
+			<result name="edit">/pages/postremove/edit.jsp</result>
+			<result name="edit_up">/pages/postremove/edit_up.jsp</result>
+			<result name="add">/pages/postremove/add.jsp</result>
+			<result name="show">/pages/postremove/show.jsp</result>
+		</action>
+	</package>
+</struts>
+

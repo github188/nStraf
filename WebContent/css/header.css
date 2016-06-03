@@ -1,0 +1,183 @@
+/*Tab type css */
+BODY { 
+font-family:"ËÎÌו"; 
+SCROLLBAR-FACE-COLOR: #eaedf3; 
+FONT-SIZE: 9pt; MARGIN: 0px; 
+SCROLLBAR-HIGHLIGHT-COLOR: #ffffff; 
+SCROLLBAR-SHADOW-COLOR: #cccccc; 
+COLOR: #000000; 
+SCROLLBAR-3DLIGHT-COLOR: #cccccc; 
+SCROLLBAR-ARROW-COLOR: #cccccc; 
+SCROLLBAR-TRACK-COLOR: #dddddd; 
+SCROLLBAR-DARKSHADOW-COLOR: #cccccc; 
+SCROLLBAR-BASE-COLOR: #eaedf3;
+    background-image: url(../images/tabbg/top_bg.gif);
+    background-repeat: repeat-x;
+    background-position: top;
+    margin: 0;
+    padding: 0;
+    line-height: 23px;
+}
+TABLE {FONT-SIZE: 9pt; COLOR: #000000; LINE-HEIGHT: 18px;}
+IMG {BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none}
+INPUT {HEIGHT: 18px}
+SELECT {FONT-SIZE:9pt}
+FORM {MARGIN: 0px}
+P {TEXT-INDENT: 2em}
+
+/*Class type css*/
+.mainBody {background-color:#eaedf3; margin:5px;}
+.colHeader_tiger { FONT-SIZE: 9pt; COLOR: #000000; BACKGROUND-COLOR: #a5badf}
+.colHeader {BORDER-RIGHT: #becfed 1px solid; PADDING-LEFT: 3px; padding-right:3px; FONT-SIZE: 9pt; COLOR: #000000; PADDING-TOP: 3px; BORDER-BOTTOM: #becfed 1px solid; BACKGROUND-COLOR: #a5badf}
+.colHeaderCenter {BORDER-RIGHT: #becfed 1px solid; PADDING-LEFT: 3px; padding-right:3px; FONT-SIZE: 9pt; COLOR: #000000; PADDING-TOP: 3px; BORDER-BOTTOM: #becfed 1px solid; BACKGROUND-COLOR: #a5badf; text-align:center;}
+.colHeaderSort_asce{BORDER-RIGHT: #becfed 1px solid; PADDING-LEFT: 15px; padding-right:3px; FONT-SIZE: 9pt; COLOR: #ffffff; PADDING-TOP: 3px; BORDER-BOTTOM: #becfed 1px solid; BACKGROUND-COLOR: #8AA1CA; background-image:url(../../images/pic_sort_asce.gif);}
+.colHeaderSort_desc{BORDER-RIGHT: #becfed 1px solid; PADDING-LEFT: 15px; padding-right:3px; FONT-SIZE: 9pt; COLOR: #ffffff; PADDING-TOP: 3px; BORDER-BOTTOM: #becfed 1px solid; BACKGROUND-COLOR: #8AA1CA; background-image:url(../../images/pic_sort_desc.gif);}
+.loginText {FONT-SIZE: 9pt; COLOR: #000000; padding-top:3px; text-align:left;}
+.curPosText {FONT-SIZE: 9pt;}
+.header {FONT-WEIGHT: bold; FONT-SIZE: 11pt; COLOR: #204998; padding-top:10px; padding-bottom:0px;}
+.subheader {FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: #204998; padding-top:10px; padding-bottom:0px;}
+.tipText{FONT-SIZE: 9pt;}
+.text {padding-left:5px; PADDING-RIGHT:5px; PADDING-TOP: 2px; padding-bottom:2px;}
+.textCenter {padding-left:5px; PADDING-RIGHT:5px; PADDING-TOP: 2px; padding-bottom:2px; TEXT-ALIGN: center}
+.textRight {padding-left:5px; PADDING-RIGHT:5px; PADDING-TOP: 2px; padding-bottom:2px; TEXT-ALIGN: right}
+.textBig {FONT-WEIGHT: bold; FONT-SIZE: 11pt; COLOR: #204998; padding-left:10px; PADDING-RIGHT:0px; PADDING-TOP: 2px; padding-bottom:2px; TEXT-ALIGN: right}
+.textBigCenter {FONT-WEIGHT: bold; FONT-SIZE: 11pt; COLOR: #204998; padding-left:5px; PADDING-RIGHT:5px; PADDING-TOP: 2px; padding-bottom:2px; TEXT-ALIGN: center}
+.textAbsmid { text-align:center; vertical-align:middle;}
+.InputReadOnly {
+  border-top-width:   1px;   
+  border-right-width:   1px;   
+  border-bottom-width:   1px;   
+  border-left-width:   1px;   
+  border-top-style:   solid;   
+  border-right-style:   solid;   
+  border-bottom-style:   solid;   
+  border-left-style:   solid;   
+  border-top-color:   #204998;   
+  border-right-color:   #204998;   
+  border-bottom-color:   #204998;   
+  border-left-color:   #204998;   
+	BACKGROUND-COLOR: Silver;
+	COLOR: #204998;
+}
+.cellText {BORDER-RIGHT: #ebf2f8 1px solid; PADDING:2px; BORDER-BOTTOM: #c1cdd8 1px solid;}
+.cellTextRight {BORDER-RIGHT: #ebf2f8 1px solid; PADDING:2px; BORDER-BOTTOM: #c1cdd8 1px solid; TEXT-ALIGN: right}
+.cellTextBand_tiger {BACKGROUND-COLOR: #ffffff;word-break:break-all}
+.cellTextBand {BORDER-RIGHT: #ebf2f8 1px solid; PADDING:2px; BORDER-BOTTOM: #c1cdd8 1px solid; BACKGROUND-COLOR: #ffffff;word-break:break-all}
+.cellTextBandRight {BORDER-RIGHT: #ebf2f8 1px solid; PADDING: 2px; BORDER-BOTTOM: #c1cdd8 1px solid; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: right}
+.cellTextBandCenter {BORDER-RIGHT: #ebf2f8 1px solid; PADDING: 2px; BORDER-BOTTOM: #c1cdd8 1px solid; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: center}
+.errMesText {COLOR: #E42323}
+.white {COLOR: #ffffff;}
+.red{color:#ff0000;}
+.blue{color:#204998;}
+.boldwhite{COLOR: #ffffff;font-weight:bold;}
+.boldred{COLOR: #ff0000;font-weight:bold;}
+.boldblue{COLOR: #204998;font-weight:bold;}
+.copyRightText {FONT-SIZE: 8pt; COLOR: #8CA6D9; FONT-FAMILY: Arial, Helvetica, Geneva, sans-serif; TEXT-ALIGN: left; padding-left:5px;}
+.errMesHeader{ font-size:13px; font-weight:bold; color:#E42323;}
+.mesHeader{ font-size:13px; font-weight:bold; color:#204998;}
+.message_error_tit{ font-size:13px; font-weight:bold; color:#E42323;}
+.Btn {BORDER-RIGHT: #204998 1px solid; BORDER-TOP: #204998 1px solid; FONT-SIZE: 9pt; BORDER-LEFT: #204998 1px solid; CURSOR: hand; COLOR: #ffffff; BORDER-BOTTOM: #204998 1px solid; HEIGHT: 18px; BACKGROUND-COLOR: #204998}
+.BtnDisable {
+	BORDER-RIGHT: #204998 1px solid;
+	BORDER-TOP: #204998 1px solid;
+	FONT-SIZE: 9pt;
+	BORDER-LEFT: #204998 1px solid;
+	CURSOR: hand;
+	COLOR: #ffffff;
+	BORDER-BOTTOM: #204998 1px solid;
+	HEIGHT: 18px;
+	BACKGROUND-COLOR: Silver;
+}
+.subBtn {
+    BORDER: #A5BADF 1px double;
+	background-color:#F2F6FE;
+	FONT-SIZE: 9pt; 
+	COLOR: #204998; 
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+	height:18px;
+	padding-top:1px;
+	cursor:hand;
+}
+.Pagination_table{BACKGROUND-COLOR: #A5BADF; }
+.Pagination{BACKGROUND-COLOR: #eaedf3; text-align:center; padding-left:5px; padding-right:5px;}
+.PaginationBand{BACKGROUND-COLOR: #ffffff; text-align:center; padding-left:5px; padding-right:5px;}
+.border_top{ border-top:1px solid #000000}
+.border_bottom{ border-bottom:1px solid #000000}
+.border_left{ border-left:1px solid #000000}
+.border_right{ border-right:1px solid #000000}
+.textarea{ height:auto;}
+
+.t_t{BACKGROUND-COLOR: #A4B6D7;border:0px;}
+.t_t tr{BACKGROUND-COLOR: #FFF;}
+.t_t td{padding-left:5px;}
+.t_t td img{border:0px;padding:0px;}
+.t_title{BACKGROUND-IMAGE:url(../images/tabbg/ban_02.gif);height:32px;}
+.t_title div{background:url(../images/icon/list.gif) no-repeat left 0px;margin-left:3px;}
+.t_title h1{font-size:15px;margin:0;color:#0099FF;padding-left:19px;}
+.t_head{BACKGROUND-IMAGE:url(../images/tabbg/title1.gif);}
+.t_head td{color: #204998;font-size: 14px;font-weight: bold;}
+.t_head td a{color: #FF0000;}
+
+.classname{clear:both;border:1px solid #ccc;padding:26px 0;background-image:url(../images/tabbg/title_bg.gif);width:100%;line-height:20px;margin:5px 1px;}
+.classname ul li{float:left;background:url(../images/tabbg/tag_left1.gif) no-repeat left top;margin-top:-3px;padding-top:3px;margin-left:3px;}
+.classname li a {float:left; display:block;padding:4px 10px 4px 10px;text-decoration:none;cursor:pointer;background:url(../images/tabbg/tag_bottom1.gif) no-repeat center bottom;height:21px;color:#666;}
+.classname li a:hover {text-decoration:none;color:#333;}
+.classname ul {float:left;margin-top:-29px;padding:5px 0 0 12px;position:absolute;}
+.classname b {font-weight:normal;float:left;background:url(../images/tabbg/tag_right1.gif) no-repeat right top;margin-top:-3px;padding-top:3px;}
+.classname .current a {color:white;}
+.classname .current a:hover {background:url(../images/tabbg/tag_bottom.gif) no-repeat center bottom;color:#FFF;}
+.classname .current {background:url(../images/tabbg/tag_left.gif) no-repeat left top;margin-top:-3px;padding-top:3px;}
+.classname .current b {background:url(../images/tabbg/tag_right.gif) no-repeat right top;	margin-top:-3px;padding-top:3px;}
+.classname .current a {background:url(../images/tabbg/tag_bottom.gif) no-repeat center bottom;height:21px;color:#FFF;	font-weight:bold;}
+
+
+/*Advanced type css*/
+
+a{text-decoration: none;}
+a,a:link{color: #444;text-decoration: none;}
+a:hover{color: #f00;text-decoration: underline;}
+
+.global{FONT-SIZE: 9pt; COLOR: #000000; padding-left:3px; padding-right:5px; }
+A.global:link{COLOR: #000000; TEXT-DECORATION: none}
+A.global:visited { COLOR: #000000; TEXT-DECORATION: none}
+A.global:hover { COLOR: #ffffff; TEXT-DECORATION: none}
+
+.navpadding {padding-left:6px; padding-right:5px; padding-top:5px; padding-bottom:2px;}
+.nav {FONT-SIZE: 9pt; COLOR: #ffffff; }
+A.nav:link{COLOR: #ffffff; TEXT-DECORATION: none}
+A.nav:visited {COLOR: #ffffff; TEXT-DECORATION: none}
+A.nav:hover {COLOR: #8CA6D9; TEXT-DECORATION: none}
+
+.SubNav {FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #ffffff}
+A.subNav:link{COLOR: #ffffff; TEXT-DECORATION: none}
+A.subNav:visited {COLOR: #ffffff; TEXT-DECORATION: none}
+A.subNav:hover {COLOR: #ffffff; TEXT-DECORATION: underline}
+
+.subSubNav {FONT-SIZE: 9pt; COLOR: #000000; }
+A.subSubNav:link {COLOR: #000000; TEXT-DECORATION: none}
+A.subSubNav:visited {COLOR: #000000; TEXT-DECORATION: none}
+A.subSubNav:active {COLOR: #ff0000; TEXT-DECORATION: none}
+A.subSubNav:hover {COLOR: #ff0000; TEXT-DECORATION: none}
+
+.subSubSubNav {FONT-SIZE: 9pt; COLOR: #000000; }
+A.subSubSubNav:link {COLOR: #000000; TEXT-DECORATION: none}
+A.subSubSubNav:visited {COLOR: #000000; TEXT-DECORATION: none}
+A.subSubSubNav:active {COLOR: #204998; TEXT-DECORATION: none}
+A.subSubSubNav:hover {COLOR: #204998; TEXT-DECORATION: underline}
+
+A.txt:link {COLOR: #204998; TEXT-DECORATION: none}
+A.txt:visited {COLOR: #204998; TEXT-DECORATION: none}
+A.txt:hover {COLOR: #ff0000; TEXT-DECORATION: none}
+
+A.step:link {COLOR: #204998; TEXT-DECORATION: underline; text-align:center; font-weight:100;}
+A.step:visited {COLOR: #204998; TEXT-DECORATION: underline; text-align:center; font-weight:100;}
+A.step:hover {COLOR: #204998; TEXT-DECORATION: underline; text-align:center; font-weight:100;}
+
+.footerNav {FONT-SIZE: 8pt; COLOR: #ffffff; FONT-FAMILY: Arial, Helvetica, Geneva, sans-serif; TEXT-ALIGN: right; padding-right:2px; padding-left:2px;}
+A.footerNav:link {COLOR: #ffffff; TEXT-DECORATION: none}
+A.footerNav:visited {COLOR: #ffffff; TEXT-DECORATION: none}
+A.footerNav:hover {COLOR: #ffffff; TEXT-DECORATION: none}
+
+A.sort:link {COLOR: #ffffff; TEXT-DECORATION: none;}
+A.sort:visited {COLOR: #ffffff; TEXT-DECORATION: none;}
+A.sort:hover {COLOR: #ffffff; TEXT-DECORATION: none;}

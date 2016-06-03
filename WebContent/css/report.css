@@ -1,0 +1,15 @@
+/*Class type css*/
+
+.r_mainBody {background-color:#ffffff; margin:5px;}
+.r_cellTextTitle { background-color:#F4F8FF; padding-left:5px; padding-right:5px; text-align:center;FONT-SIZE: 14pt;}
+.r_cellText { background-color:#F4F8FF; padding-left:5px; padding-right:5px; text-align:center;}
+.r_cellText2 { background-color:#FDFAF5; padding-left:5px; padding-right:5px; text-align:center;}
+.r_cellTextRight { background-color:#F4F8FF; TEXT-ALIGN: right; padding-left:5px; padding-right:5px;}
+.r_cellTextBand {BACKGROUND-COLOR: #ffffff; padding-left:5px; padding-right:5px; text-align:center;}
+.r_cellTextBandLeft {BACKGROUND-COLOR: #ffffff; padding-left:5px; padding-right:5px; text-align:left;}
+.r_cellTextBandRight {BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: right; padding-left:5px; padding-right:5px;}
+.r_cellTextAbsmid { text-align:center; vertical-align:middle; padding-left:5px; padding-right:5px;}
+.r_tableBg{ background-color:#C6D3EA;}
+.r_header{FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #204998; padding-left:5px;}
+.r_input{ border:1px solid #C6D3EA; width:100%;}
+.r_textarea{ border:1px solid #C6D3EA; width:100%; height:auto;}

@@ -1,0 +1,19 @@
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/fixasset" namespace="/pages/fixasset" extends="global">
+		<action name="fixassetinfo"
+			class="cn.grgbanking.feeltm.fixasset.webapp.FixAssetAction">
+			<result name="input">/pages/fixasset/fixasset_list.jsp</result>
+			<result name="query">/pages/fixasset/fixasset_list.jsp</result>
+			<result name="edit">/pages/fixasset/fixasset_edit.jsp</result>
+			<result name="add">/pages/fixasset/fixasset_add.jsp</result>
+			<result name="show">/pages/fixasset/fixasset_show.jsp</result>
+			<result name="info">/pages/fixasset/fixasset_info.jsp</result>
+			<result name="audit">/pages/fixasset/fixasset_audit.jsp</result>
+			<result name="select">/pages/fixasset/select.jsp</result>
+		</action>
+	</package>
+</struts>
+

@@ -1,0 +1,14 @@
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/loglistener"  namespace="/pages/loglistener" extends="global">
+		<action name="loglistener"  class="cn.grgbanking.feeltm.loglistener.webapp.LogListenerAction">
+			<result name="list" >/pages/loglistener/list.jsp</result>
+			<result name="add" >/pages/loglistener/add.jsp</result>
+			<result name="modify" >/pages/loglistener/modify.jsp</result>
+			<result name="msgBox">/WEB-INF/common/msgBox.jsp</result>
+		</action>
+	</package>
+</struts>
+

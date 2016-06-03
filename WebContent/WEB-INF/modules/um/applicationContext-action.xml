@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<!-- 管理后台的Spring Servlet配置文件 -->
+<beans default-autowire="byName" default-lazy-init="true">
+	
+    <!-- Add new Actions here -->
+    <bean name="/pages/um/sysUser" class="cn.grgbanking.feeltm.um.webapp.SysUserInfoAction" ></bean>
+   
+    <bean name="/pages/um/userRole" class="cn.grgbanking.feeltm.um.webapp.UserRoleInfoAction" ></bean>
+   
+    <bean name="/pages/um/userGroup" class="cn.grgbanking.feeltm.um.webapp.UserGroupInfoAction" ></bean>
+    
+    
+    
+    
+    <bean name="/pages/um/sysUserGroup" class="cn.grgbanking.feeltm.um.webapp.SysUserGroupAction" >
+    </bean> 
+    
+     <bean name="/pages/um/userGroupRole" class="cn.grgbanking.feeltm.um.webapp.UserGroupRoleAction" >
+     
+    </bean>  
+    
+    
+    
+     <bean name="/pages/um/userRolePurview" class="cn.grgbanking.feeltm.um.webapp.UserRolePurviewAction" >
+      
+    </bean>   
+    
+    <bean name="/pages/um/pwdSave" class="cn.grgbanking.feeltm.um.webapp.PwdSaveAction" >
+      
+    </bean>         
+</beans>
+
+
+
+
+
+
+
+
+

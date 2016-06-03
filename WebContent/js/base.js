@@ -1,0 +1,2 @@
+var jsmsg = '<script src="/js/jquery.js" type="text/javascript"></script><script src="/js/tabs.js" type="text/javascript"></script><link href="/js/skin/qq/ymPrompt.css" rel="stylesheet" type="text/css" /><script type="text/javascript" src="/js/ymPrompt.js"></script><link href="/css/base.css" rel="stylesheet" type="text/css" /><link href="/css/toolbar.css" rel="stylesheet" type="text/css" />'; 
+document.write(jsmsg);

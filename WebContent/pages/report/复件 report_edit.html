@@ -1,0 +1,284 @@
+﻿<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ include file="/inc/taglib.inc"%>
+<%@ include file="/inc/expire.inc"%>
+<%@ include file="/inc/htc.inc"%>
+<%@ include file="/inc/calendar.inc"%>
+<%@ include file="/inc/xmlHtc.inc"%>
+<%@ include file="/pages/common/loading.jsp"%>
+<%@ taglib uri="/struts-tags" prefix="s" %>
+<html> 
+ <head>工作报告修改信息</head>
+	<link href="../../css/css_v2.css" type=text/css rel=stylesheet>
+	<script type="text/javascript" src="../../js/tablesort.js"></script>
+	<script type="text/javascript" src="../../js/Validator.js"></script>
+	<script type="text/javascript" src="../../js/DateValidator.js"></script>
+	<script type="text/javascript">
+		var iRet = 0;
+		function closeModal(){
+	 		window.close();
+		}
+		function update(){
+			if(document.getElementsByTagName("textarea")[2].value.trim() == ""){
+				alert("请输入任务描述");
+				return;
+			}
+			tmlInfoForm.submit();
+		}
+		function Validate(itemName,pattern){
+			 var Require= /.+/;
+			 var Email= /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+			 var Phone= /^((\(\d{2,3}\))|(\d{3}\-))?(\(0\d{2,3}\)|0\d{2,3}-)?[1-9]\d{6,7}(\-\d{1,4})?$/;
+			var Mobile= /^((\(\d{2,3}\))|(\d{3}\-))?13\d{9}$/;
+			var Url= /^http:\/\/[A-Za-z0-9]+\.[A-Za-z0-9]+[\/=\?%\-&_~`@[\]\':+!]*([^<>\"\"])*$/;
+		   var IdCard = /^\d{15}(\d{2}[A-Za-z0-9])?$/;
+		   var Currency = /^\d+(\.\d+)?$/;
+		   var Number= /^\d+$/;
+		   var Zip = /^[1-9]\d{5}$/;
+		   var QQ = /^[1-9]\d{4,8}$/;
+		   var Integer = /^[-\+]?\d+$/;
+		   var integer = /^[+]?\d+$/;
+		   var Double= /^[-\+]?\d+(\.\d+)?$/;
+		   var double = /^[+]?\d+(\.\d+)?$/;
+		   var English = /^([A-Za-z]|[,\!\*\.\ \(\)\[\]\{\}<>\?\\\/\'\"])+$/;
+		   var Chinese = /^[\u0391-\uFFE5]+$/;
+		   var BankCard = /^([0-9]|[,]|[;])+([;])+$/;
+		
+			var itemNameValue=document.getElementsByName(itemName)[0].value
+			
+				var flag
+			switch(pattern){ 
+			 case "Require":
+				 flag = Require.test(itemNameValue);
+				  break;
+			 case "Email":
+				 flag = Email.test(itemNameValue);
+				  break;
+			 case "Phone":
+				 flag = Phone.test(itemNameValue);
+				  break;
+			 case "Mobile":
+				 flag = Mobile.test(itemNameValue);
+				  break;
+			 case "Url":
+				 flag = Url.test(itemNameValue);
+				  break;
+			 case "IdCard":
+				 flag = IdCard.test(itemNameValue);
+				  break;
+			 case "Currency":
+				 flag = Currency.test(itemNameValue);
+				  break;
+			 case "Number":
+				 flag = Number.test(itemNameValue);
+					  break;
+			 case "Zip":
+				 flag = Zip.test(itemNameValue);
+				  break;
+			 case "QQ":
+				 flag = QQ.test(itemNameValue);
+				  break;
+			 case "integer":
+				 flag = integer.test(itemNameValue);
+				  break;		  
+			 case "Integer":
+			// if (itemNameValue.length>0)
+				 flag = Integer.test(itemNameValue);
+			//else 
+			//	flag=true
+				  break;
+			 case "Double":
+				 flag = Double.test(itemNameValue);
+				  break;
+			 case "double":
+					 flag = double.test(itemNameValue);
+					  break;
+			 case "English":
+				 flag = English.test(itemNameValue);
+				  break;
+			 case "Chinese":
+				 flag = Chinese.test(itemNameValue);
+				  break;
+			 case "BankCard":
+				 flag = BankCard.test(itemNameValue);
+				  break;		  
+			default :
+				flag = false;
+				break;
+			}
+		//	if (!flag){
+		//	alert(msg);
+		//	document.getElementsByName(itemName)[0].focus();
+		//	}
+		   return flag
+		
+		}
+		
+		String.prototype.trim = function()
+		{
+			return this.replace(/(^\s*)|(\s*$)/g, "");
+		}
+		
+		function numVali(itemName) {
+			var ret = 0, tmp = 0, iSRet = 0;
+			if(! Validate(itemName.name, "Number"))
+			{
+				document.getElementsByName(itemName.name)[0].value = 0;
+				alert("请输入数字");
+			}
+			else{
+				tmp = parseInt(itemName.value);
+				if(tmp>20){
+					itemName.value = 0;
+					alert("请输入20以内的数字");
+				}			
+			}
+			var itemPPtr = itemName.parentNode.parentNode.parentNode;
+			for(var ind=0; ind<itemPPtr.getElementsByTagName("input").length; ind++){
+				if(itemPPtr.getElementsByTagName("input")[ind].name != "subtotal"){
+					var tmpInt = parseInt(itemPPtr.getElementsByTagName("input")[ind].value);
+					if(isNaN(tmpInt)){
+						tmpInt = 0;
+					}
+					ret += tmpInt;
+				}
+			}
+			for(var ind=0; ind<itemPPtr.getElementsByTagName("input").length; ind++){
+				if(itemPPtr.getElementsByTagName("input")[ind].name == "subtotal"){
+					itemPPtr.getElementsByTagName("input")[ind].value = ret;
+				}
+			}
+			iSRet = iRet + parseInt(document.getElementsByName("subtotal")[0].value);
+			document.getElementById("sumShow").innerHTML = iSRet;
+		}
+		
+		function checkHdl(val)
+		{
+			if(val.value.trim()=="" || val.value == null)
+			{
+				alert("必填项不能为空");
+				val.value = "今天没工作任务";
+			}
+		}
+	</script>
+<body id="bodyid"  leftmargin="0" topmargin="10" >
+	<form name="tmlInfoForm" action="<%=request.getContextPath() %>/pages/report/reportinfo!update.action"   method="post">
+		<input type="hidden" name="id" value='<s:property value="report.id"/>'/>	
+		<table width="90%" align="center" cellPadding="0" cellSpacing="0">
+		<tr>
+			<td>
+			<fieldset class="jui_fieldset" width="100%">
+				<legend><s:text name="工作报告信息" /></legend>
+                <table width="100%" align="center">
+                	<tr>
+                        <td align="center" width="10%"><div align="center">日期</div></td>  
+                        <td><div align="left">
+                            <input name="createDate"  type="text" id="begin" size="22" class="MyInput" isSel="true" isDate="true" onFocus="ShowDateTime(this)" dofun="ShowDateTime(this)" value='<s:date name="report.startDate" format="yyyy-MM-dd"/>'> 
+                        </div></td>
+                        <td>
+                            <div align="right">工时总计 <font color="#FF0000"><span id="sumShow">0</span></font> 小时</div>
+                        </td>
+                    </tr>
+                </table>
+				<table width="100%" align="center">
+                    <tr>
+                      <td align="center" width="6%"><div align="center">项目名称</div></td>  
+                      <td colspan="4"><textarea name="prjName" type="text" id="prjName" rows="2" cols="42" ><s:property value="report.prjName"/></textarea> </td> 
+                      <td align="center" width="6%"><div align="center">交付件</div></td>  
+                      <td colspan="4"><textarea name="attachment" type="text" id="attachment" rows="2" cols="42" ><s:property value="report.attachment"/></textarea>  </td> 
+                  </tr> 
+                    <tr>
+                        <td align="center" width="6%"><div align="center">任务描述</div></td>
+                        <td colspan="4"><textarea name="prjDesc" type="text" id="prjDesc" rows="3" cols="42"  onChange="checkHdl(this)" ><s:property value="report.taskDesc"/></textarea><font color="#FF0000">*</font>  </td> 
+                        <td align="center" width="6%"><div align="center">任务偏差原因</div></td> 
+                      <td colspan="4"><textarea name="reason" type="text" id="reason"  rows="3" cols="42" ><s:property value="report.taskReason"/></textarea> </td> 
+                  </tr>
+                    <tr>
+                        <td align="center" width="6%"><div align="center">完成%</div></td>
+                        <td colspan="4" align="center"><div align="left">
+						<select name="finishRate"  id="finishRate" style="width: 315px" >
+                            <option value="100%">100%</option>
+                            <option value="95%">95%</option>
+                            <option value="90%">90%</option>
+                            <option value="85%">85%</option>
+                            <option value="80%">80%</option>
+                            <option value="75%">75%</option>
+                            <option value="70%">70%</option>
+                            <option value="65%">65%</option>
+                            <option value="60%">60%</option>
+                            <option value="55%">55%</option>
+                            <option value="50%">50%</option>
+                            <option value="45%">45%</option>
+                            <option value="40%">40%</option>
+                            <option value="35%">35%</option>
+                            <option value="30%">30%</option>
+                            <option value="25%">25%</option>
+                            <option value="20%">20%</option>
+                            <option value="15%">15%</option>
+                            <option value="10%">10%</option>
+                            <option value="5%">5%</option>
+                            <option value="0%" selected="true">0%</option>
+                            </select><font color="#FF0000">*</font></div></td> 
+                        <td align="center" width="6%"><div align="center">状态</div></td> 
+                      <td colspan="4" align="center"><div align="left">
+                        <select name="status"  id="status" style="width: 315px">
+                            <option value="按时" selected="true">按时</option>
+                            <option value="延迟">延迟</option>
+                            <option value="新增">新增</option>
+                            <option value="取消">取消</option> 
+                            <option value="暂停">暂停</option>         
+                            </select><font color="#FF0000">*</font>
+						</div></td> 
+                  </tr>
+                    <tr><td colspan="15">&nbsp;</td></tr>
+                    <tr>
+                      <td width="6%">&nbsp;</td>
+                      <td width="6%"><div align="center">管理</div></td>
+                      <td width="6%"><div align="center">需求</div></td>
+                      <td width="6%"><div align="center">设计</div></td>
+                      <td width="6%"><div align="center">编码</div></td>
+                      <td width="6%"><div align="center">测试</div></td>
+                      <td width="6%"><div align="center">其他</div></td>
+                      <td width="6%"><div align="center">工程</div></td>
+                      <td width="6%"><div align="center">小计</div></td>
+                      <td width="6%">&nbsp;</td>
+                  </tr>
+                    <tr>
+                        <td><div align="center">&nbsp;</div></td>
+                        <td><div align="center"><input name="management" type="text" id="management"  size="8" maxlength="2" onChange="numVali(this)"  value='<s:property value="report.managerment"/>'></div></td> 
+                      <td><div align="center"><input name="requirement" type="text" id="requirement"  size="8" maxlength="2" onChange="numVali(this)"  value='<s:property value="report.requirement"/>'></div></td> 
+                      <td><div align="center"><input name="design" type="text" id="design"  size="8" maxlength="2" onChange="numVali(this)"  value='<s:property value="report.design"/>'></div></td>
+                      <td><div align="center"><input name="code" type="text" id="code"  size="8" maxlength="2" onChange="numVali(this)"  value='<s:property value="report.code"/>'></div></td>
+                      <td><div align="center"><input name="test" type="text" id="test"  size="8" maxlength="2" onChange="numVali(this)"  value='<s:property value="report.test"/>'></div></td>  
+                      <td><div align="center"><input name="other" type="text" id="other"  size="8" maxlength="2" onChange="numVali(this)"  value='<s:property value="report.other"/>'></div></td>
+                      <td><div align="center"><input name="project" type="text" id="project"  size="8"  maxlength="2" onChange="numVali(this)"  value='<s:property value="report.project"/>'></div></td>
+                      <td><div align="center"><input name="subtotal" type="text" id="subtotal"  size="8" maxlength="2" readonly value='<s:property value="report.subtotal"/>'></div></td>
+                      <td>&nbsp;</td>
+                  </tr>
+                </table>
+                <script type="text/javascript">
+					var ret = "";
+					var szFinishRate = '<s:property value="report.finishRate"/>';
+					var szStatus = '<s:property value="report.status"/>';
+					// 当天工时小计时间
+					//var szSumShow = '<s:property value="report.sumShow"/>';
+					var szSumShow = "8";
+					document.getElementById("finishRate").value = (szFinishRate.trim() == "" ? "0%" : szFinishRate.trim());
+                    document.getElementById("status").value = (szStatus.trim() == "" ? "按时" : szStatus.trim());
+					document.getElementById("sumShow").innerHTML = (szSumShow.trim() == "" ? "0" : szSumShow.trim());
+					ret = document.getElementById("sumShow").innerHTML;
+					iRet = ((isNaN(parseInt(ret))?0:(parseInt(ret))));
+					iRet = iRet - ((isNaN(parseInt(document.getElementsByName("subtotal")[0].value))?0:(parseInt(document.getElementsByName("subtotal")[0].value))));
+				</script>
+			</fieldset>
+			</td> 
+		</tr> 
+		<tr>
+			<td align="center"> 
+				<input type="button" name="ok"  value='<s:text  name="grpInfo.ok" />' class="MyButton"  onclick="update()"  image="../../images/share/yes1.gif"> 
+				<input type="button" name="return" value='<s:text  name="button.close"/>' class="MyButton"  onclick="closeModal();" image="../../images/share/f_closed.gif"> 
+			</td> 
+  		</tr>  
+ 		</table> 
+ 	</form>
+</body>  
+</html> 

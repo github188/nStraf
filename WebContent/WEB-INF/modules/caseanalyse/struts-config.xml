@@ -1,0 +1,15 @@
+
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/caseanalyse" namespace="/pages/caseanalyse" extends="global">
+		<action name="caseanalyseinfo" class="cn.grgbanking.feeltm.caseanalyse.webapp.CaseAnalyseAction">
+			<result name="query">/pages/caseanalyse/list.jsp</result>
+			<result name="edit">/pages/caseanalyse/edit.jsp</result>
+			<result name="add">/pages/caseanalyse/add.jsp</result>
+			<result name="show">/pages/caseanalyse/show.jsp</result>
+		</action>
+	</package>
+</struts>
+

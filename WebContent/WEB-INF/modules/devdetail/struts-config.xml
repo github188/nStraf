@@ -1,0 +1,16 @@
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/devdetail" namespace="/pages/devdetail" extends="global">
+		<action name="devdetailinfo"
+			class="cn.grgbanking.feeltm.prj.webapp.DeveloperDetailAction">
+			<result name="query">/pages/devdetail/prjdev_list.jsp</result>
+			<result name="show">/pages/devdetail/prjdev_show.jsp</result>
+		</action>
+
+	
+
+	</package>
+</struts>
+

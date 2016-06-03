@@ -1,0 +1,24 @@
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/costControl" namespace="/pages/costControl" extends="global">
+		<action name="general" class="cn.grgbanking.feeltm.costControl.action.GeneralCostControlAction">
+			<result name="list">/pages/costControl/generallist.jsp</result>
+		</action>
+		<action name="detail" class="cn.grgbanking.feeltm.costControl.action.DetailCostControlAction">
+			<result name="list">/pages/costControl/detaillist.jsp</result>
+			<result name="exportProjectPersonDay">/pages/costControl/exportProjectPersonDay.jsp</result>
+		</action>
+		<action name="dateincome" class="cn.grgbanking.feeltm.costControl.action.DateIncomeManageAction">
+			<result name="list">/pages/costControl/dateincomelist.jsp</result>
+			<result name="add">/pages/costControl/adddateincome.jsp</result>
+			<result name="modify">/pages/costControl/modify.jsp</result>
+			 <result name="msgBox">/WEB-INF/common/msgBox.jsp</result> 
+		</action>
+		<action name="profit" class="cn.grgbanking.feeltm.costControl.action.ProjectProfitAction">
+			<result name="list">/pages/costControl/profitlist.jsp</result>
+		</action>
+	</package>
+</struts>
+

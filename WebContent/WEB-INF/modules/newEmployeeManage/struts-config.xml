@@ -1,0 +1,22 @@
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/newEmployeeManage" namespace="/pages/newEmployeeManage" extends="global">
+		<action name="newEmployeeManageinfo"
+			class="cn.grgbanking.feeltm.study.webapp.NewEmployeeManageAction">
+			<result name="input">/pages/newEmployeeManage/list.jsp</result>
+			<result name="query">/pages/newEmployeeManage/list.jsp</result>
+			<result name="edit">/pages/newEmployeeManage/edit.jsp</result>
+			<result name="add">/pages/newEmployeeManage/add.jsp</result>
+			<result name="show">/pages/newEmployeeManage/show.jsp</result>
+			<result name="info">/pages/newEmployeeManage/info.jsp</result>
+			<result name="info">/pages/newEmployeeManage/info.jsp</result>
+			<result name="distribute">/pages/newEmployeeManage/distribute.jsp</result>
+			<result name="editDistribute">/pages/newEmployeeManage/edit_distribute.jsp</result>
+			<result name="editDistribute2">/pages/newEmployeeManage/edit_distribute2.jsp</result>
+		</action>
+	
+	</package>
+</struts>
+

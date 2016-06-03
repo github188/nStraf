@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE form-validation PUBLIC "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.1//EN" "http://jakarta.apache.org/commons/dtds/validator_1_1.dtd">
+<form-validation>
+	<formset>
+		<form name="menuOperateForm">
+		  <field property="opername" depends="required">
+				<arg0 key="check.opername" />
+		  </field>
+		</form>
+		
+		<form name="menuInfoForm">
+		  <field property="menuitem" depends="required">
+				<arg0 key="menuInfoForm.menuname" />
+		  </field>
+		  <field property="actionto" depends="required">
+				<arg0 key="menuInfoForm.setorder" />
+		  </field>
+		</form>
+	</formset>
+</form-validation>

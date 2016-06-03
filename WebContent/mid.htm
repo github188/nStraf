@@ -1,0 +1,36 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<META content="MSHTML 6.00.2900.5726" name=GENERATOR></HEAD>
+<title>分割</title>
+<script type="text/javascript">
+function pagebar(img)
+{
+	var cols = parent.document.getElementById("left").cols;
+	if (cols == "180,10,*"){
+		img.src="images/icon/openleft.gif";
+		img.alt="点击伸展";
+		parent.document.getElementById("left").cols ="0,10,*";
+	}
+	else {
+		img.src="images/icon/closeleft.gif";
+		img.alt="点击收缩";
+		parent.document.getElementById("left").cols ="180,10,*";
+	}
+}
+function Logout(){
+}
+</script>
+</head>
+
+<BODY onUnload="Logout()" style="margin:0px;">
+	<TABLE height="100%" cellSpacing=0 cellPadding=0 width="10px">
+			<TR>
+				<TD style="BACKGROUND: url(images_new/main/hdt.png); WIDTH: 10px; CURSOR: pointer; HEIGHT: 100%"
+					onclick="pagebar(Left_Img)" align="right"><IMG id="Left_Img"
+					src="images/icon/closeleft.gif" border="0" name="Left_Img" /></TD>
+			</TR>
+	</TABLE>
+</BODY>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/prjContract" namespace="/pages/prjContract" extends="global">
+		<action name="prjContractInfo"
+			class="cn.grgbanking.feeltm.prjcontract.webapp.PrjContractAction">
+			<result name="listsuccess">/pages/prjContract/prjContractInfoList.jsp</result>
+			<result name="edit">/pages/prjContract/prjContract_edit.jsp</result>
+			<result name="add">/pages/prjContract/prjContract_add.jsp</result>
+			<result name="view">/pages/prjContract/view.jsp</result>
+			<result name="payment">/pages/prjContract/prjContract_payment.jsp</result>		
+		</action>
+
+	
+
+	</package>
+</struts>

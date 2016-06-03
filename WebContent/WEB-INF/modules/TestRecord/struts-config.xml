@@ -1,0 +1,42 @@
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/TestRecord" namespace="/pages/TestRecord" extends="global">
+		<action name="TestRecordinfo"
+			class="cn.grgbanking.feeltm.testrecord.webapp.TestRecordAction">
+			<result name="input">/pages/TestRecord/list.jsp</result>
+			<result name="query">/pages/TestRecord/list.jsp</result>
+			<result name="edit">/pages/TestRecord/edit.jsp</result>
+			<result name="add">/pages/TestRecord/add.jsp</result>
+			<result name="show">/pages/TestRecord/show.jsp</result>
+			<result name="info">/pages/TestRecord/info.jsp</result>
+			<result name="xia">/pages/TestRecord/xia.jsp</result>
+		</action>
+		<!--
+
+		<action name="repeatRegulation"
+			class="cn.grgbanking.feeltm.rule.webapp.RepeatRegulationAction">
+			<result name="query">/pages/rule/repeatRegulation_list.jsp</result>
+			<result name="edit">/pages/rule/repeatRegulation_edit.jsp</result>
+			<result name="add">/pages/rule/repeatRegulation_add.jsp</result>
+			<result name="show">/pages/rule/repeatRegulation_show.jsp</result>
+			<result name="info">/pages/rule/repeatRegulation_info.jsp</result>
+		</action>
+
+		<action name="specialRegulation"
+			class="cn.grgbanking.feeltm.rule.webapp.SpecialRegulationAction">
+			<result name="query">/pages/rule/specialRegulation_list.jsp</result>
+			<result name="edit">/pages/rule/specialRegulation_edit.jsp</result>
+			<result name="add">/pages/rule/specialRegulation_add.jsp</result>
+			<result name="show">/pages/rule/specialRegulation_show.jsp</result>
+		</action>
+
+		<action name="regulationDeliver"
+			class="cn.grgbanking.feeltm.rule.webapp.RegulationDeliverAction">
+			<result name="query">/pages/rule/regulationDeliver_list.jsp</result>
+			<result name="show">/pages/rule/regulationDeliver_show.jsp</result>
+		</action>
+	--></package>
+</struts>
+

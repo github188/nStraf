@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<!-- 管理后台的Spring Servlet配置文件 -->
+<beans default-autowire="byName" default-lazy-init="true">
+	
+    
+    <!-- Add new Actions here -->
+    <bean name="/pages/menu/MenuOperate" class="cn.grgbanking.feeltm.menu.webapp.MenuOperateAction" >
+    
+    </bean>
+
+    <bean name="/pages/menu/MenuInfo" class="cn.grgbanking.feeltm.menu.webapp.MenuInfoAction" >
+     
+    </bean>
+        
+    <bean name="/pages/menu/MenuInfoSort" class="cn.grgbanking.feeltm.menu.webapp.MenuInfoAction" >
+     </bean>
+</beans>
+
+
+
+
+
+
+
+
+

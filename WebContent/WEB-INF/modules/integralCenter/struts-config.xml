@@ -1,0 +1,12 @@
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/integralCenter" namespace="/pages/integralCenter" extends="global">
+		<action name="integralCenter" class="cn.grgbanking.feeltm.integralCenter.webApp.IntegralCenterAction">
+			<result name="show">/pages/integralCenter/integralCenter.jsp</result>
+			<result name="list">/pages/integralCenter/list.jsp</result>
+		</action>
+	</package>
+</struts>
+

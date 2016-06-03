@@ -1,0 +1,16 @@
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/prjtest" namespace="/pages/prjtest" extends="global">
+		<action name="prjtestinfo"
+			class="cn.grgbanking.feeltm.prj.webapp.TesterDetailAction">
+			<result name="query">/pages/prjtest/prjtest_list.jsp</result>
+			<result name="show">/pages/prjtest/prjtest_show.jsp</result>
+		</action>
+
+	
+
+	</package>
+</struts>
+

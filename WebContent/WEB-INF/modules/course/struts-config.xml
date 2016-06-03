@@ -1,0 +1,18 @@
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/course" namespace="/pages/course" extends="global">
+		<action name="courseinfo"
+			class="cn.grgbanking.feeltm.study.webapp.CourseAction">
+			<result name="input">/pages/course/list.jsp</result>
+			<result name="query">/pages/course/list.jsp</result>
+			<result name="edit">/pages/course/edit.jsp</result>
+			<result name="add">/pages/course/add.jsp</result>
+			<result name="show">/pages/course/show.jsp</result>
+			<result name="info">/pages/course/info.jsp</result>
+		</action>
+	
+	</package>
+</struts>
+

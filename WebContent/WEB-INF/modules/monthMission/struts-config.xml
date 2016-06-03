@@ -1,0 +1,21 @@
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<package name="/pages/monthMission" namespace="/pages/monthMission" extends="global">
+		<action name="monthMissioninfo"
+			class="cn.grgbanking.feeltm.monthMission.webapp.MonthMissionAction">
+			<result name="input">/pages/monthMission/monthMission_list.jsp</result>
+			<result name="query">/pages/monthMission/monthMission_list.jsp</result>
+			<result name="edit">/pages/monthMission/monthMission_edit.jsp</result>
+			<result name="add">/pages/monthMission/monthMission_add.jsp</result>
+			<result name="show">/pages/monthMission/monthMission_show.jsp</result>
+			<result name="selmonth">/pages/monthMission/monthMission_selmonth.jsp</result>
+			<result name="selmonthLock">/pages/monthMission/monthMission_selmonthLock.jsp</result>
+			<result name="modifybat">/pages/monthMission/monthMission_modifybat.jsp</result>
+		</action>
+	</package>
+	
+</struts>
+

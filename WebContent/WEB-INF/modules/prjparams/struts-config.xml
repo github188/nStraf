@@ -1,0 +1,19 @@
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/prjparams" namespace="/pages/prjparams" extends="global">
+		<action name="prjparamsinfo"
+			class="cn.grgbanking.feeltm.prj.webapp.ParamsAction">
+			<result name="input">/pages/prjparams/prjparams_list.jsp</result>
+			<result name="query">/pages/prjparams/prjparams_list.jsp</result>
+			<result name="edit">/pages/prjparams/prjparams_edit.jsp</result>
+			<result name="add">/pages/prjparams/prjparams_add.jsp</result>
+			<result name="show">/pages/prjparams/prjparams_show.jsp</result>
+		</action>
+
+	
+
+	</package>
+</struts>
+

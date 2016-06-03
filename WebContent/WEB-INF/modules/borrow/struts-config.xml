@@ -1,0 +1,17 @@
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/borrow" namespace="/pages/borrow" extends="global">
+		<action name="borrowInfo" class="cn.grgbanking.feeltm.borrow.webapp.BorrowAction">
+			<result name="borrowList">/pages/borrow/borrowList.jsp</result>
+			<result name="borrowDetail">/pages/borrow/borrowDetail.jsp</result>
+			<result name="borrowAdd">/pages/borrow/borrowAdd.jsp</result>
+			<result name="borrowUpdate">/pages/borrow/borrowUpdate.jsp</result>
+			<result name="borrowAudit">/pages/borrow/borrowAudit.jsp</result>
+			<result name="borrowRepay">/pages/borrow/repayAudit.jsp</result>
+			<result name="borrowRemind">/pages/borrow/borrowRemind.jsp</result>
+		</action>
+	</package>
+</struts>
+

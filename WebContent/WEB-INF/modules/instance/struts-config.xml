@@ -1,0 +1,17 @@
+
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/instance" namespace="/pages/instance" extends="global">
+		<action name="instanceinfo" class="cn.grgbanking.feeltm.instance.webapp.InstanceAction">
+			<result name="query">/pages/instance/list.jsp</result>
+			<result name="edit">/pages/instance/edit.jsp</result>
+			<result name="select" >/pages/instance/select.jsp</result>
+			<result name="add">/pages/instance/add.jsp</result>
+			<result name="show">/pages/instance/show.jsp</result>
+			<result name="selectuser">/pages/instance/selectuser.jsp</result>
+		</action>
+	</package>
+</struts>
+

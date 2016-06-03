@@ -1,0 +1,12 @@
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/workhour" namespace="/pages/workhour" extends="global">
+		<action name="workhouraction"
+			class="cn.grgbanking.feeltm.workhour.webapp.WorkhourInfoAction">
+			<result name="querySummary">/pages/workhour/workhour_summary.jsp</result>
+		</action>
+	</package>
+</struts>
+

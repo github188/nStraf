@@ -1,0 +1,58 @@
+
+连接到: Oracle Database 10g Enterprise Edition Release 10.2.0.1.0 - Production
+With the Partitioning, OLAP and Data Mining options
+
+经由常规路径由 EXPORT:V10.02.01 创建的导出文件
+已经完成 ZHS16GBK 字符集和 AL16UTF16 NCHAR 字符集中的导入
+. 正在将 FEELSTRAF 的对象导入到 FEELSTRAF
+. . 正在导入表                    "AUDIT_INFO"导入了           8 行
+. . 正在导入表                     "AUDIT_LOG"导入了          16 行
+. . 正在导入表                     "BANK_TEST"导入了           2 行
+. . 正在导入表              "BLACK_REGULATION"导入了           6 行
+. . 正在导入表                        "BTEST2"导入了           3 行
+. . 正在导入表                        "BTEST3"导入了           0 行
+. . 正在导入表                "BUS_LEAVEAPPLY"导入了           4 行
+. . 正在导入表              "BUS_LEAVEAPPROVE"导入了           4 行
+. . 正在导入表                     "GEOG_AREA"导入了           1 行
+. . 正在导入表                 "MENU_FUNCTION"导入了         974 行
+. . 正在导入表                     "MENU_INFO"导入了          31 行
+. . 正在导入表                  "MENU_OPERATE"导入了          21 行
+. . 正在导入表                "MENU_READ_FREQ"导入了         276 行
+. . 正在导入表                "MENU_READ_ROLE"导入了          21 行
+. . 正在导入表                      "ORG_INFO"导入了        1899 行
+. . 正在导入表                "OS_CURRENTSTEP"导入了           1 行
+. . 正在导入表           "OS_CURRENTSTEP_PREV"导入了           1 行
+. . 正在导入表                      "OS_GROUP"导入了          12 行
+. . 正在导入表                "OS_HISTORYSTEP"导入了          23 行
+. . 正在导入表           "OS_HISTORYSTEP_PREV"导入了          15 行
+. . 正在导入表                 "OS_MEMBERSHIP"导入了           9 行
+. . 正在导入表              "OS_PROPERTYENTRY"导入了           0 行
+. . 正在导入表                       "OS_USER"导入了           8 行
+. . 正在导入表                    "OS_WFENTRY"导入了           8 行
+. . 正在导入表            "REGULATION_DELIVER"导入了           8 行
+. . 正在导入表             "REPEAT_REGULATION"导入了           2 行
+. . 正在导入表                    "REPORT_DAY"导入了           4 行
+. . 正在导入表                   "REPORT_INFO"导入了          50 行
+. . 正在导入表                 "SERVER_SOURCE"导入了           6 行
+. . 正在导入表            "SPECIAL_REGULATION"导入了           0 行
+. . 正在导入表                   "SYS_DATADIR"导入了         153 行
+. . 正在导入表                 "SYS_LOGIN_LOG"导入了          18 行
+. . 正在导入表                  "SYS_OPER_LOG"导入了          26 行
+. . 正在导入表                      "SYS_USER"导入了           5 行
+. . 正在导入表                    "TEST_TOOLS"导入了           2 行
+. . 正在导入表                      "TML_INFO"导入了           1 行
+. . 正在导入表            "TRANS_BANKNOTE_SEQ"导入了          87 行
+. . 正在导入表        "TRANS_BANKNOTE_SEQ_HIS"导入了           0 行
+. . 正在导入表       "TRANS_BANKNOTE_SEQ_HOUR"导入了        4143 行
+. . 正在导入表                "TRANS_HIS_INFO"导入了           0 行
+. . 正在导入表               "TRANS_HOUR_INFO"导入了         131 行
+. . 正在导入表                 "TRAN_ABNOINFO"导入了           9 行
+. . 正在导入表        "TRAN_CALLBACK_ABNOINFO"导入了         113 行
+. . 正在导入表               "TRAN_ESPECIINFO"导入了           0 行
+. . 正在导入表                     "TRAN_INFO"导入了          24 行
+. . 正在导入表                     "USR_GROUP"导入了           9 行
+. . 正在导入表                   "USR_GRPROLE"导入了           5 行
+. . 正在导入表                      "USR_ROLE"导入了           4 行
+. . 正在导入表                  "USR_ROLEFUNC"导入了         132 行
+. . 正在导入表                    "USR_USRGRP"导入了           7 行
+成功终止导入, 没有出现警告。

@@ -1,0 +1,10 @@
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="common4Wechat" namespace="" extends="global">
+		<action name="service" class="cn.grgbanking.feeltm.common4Wechat.webapp.Common4WechatAction">
+		</action>
+	</package>
+</struts>
+

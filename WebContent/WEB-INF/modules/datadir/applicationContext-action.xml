@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<!-- 管理后台的Spring Servlet配置文件 -->
+<beans default-autowire="byName" default-lazy-init="false">
+    
+    <!--
+      进入管理主界面
+          新增或者修改页面
+    -->
+   
+    
+    <bean name="/pages/datadir/dataDirMgr" class="cn.grgbanking.feeltm.datadir.webapp.DataDirMgrAction" />
+
+    <!-- 
+       进入列表界面
+      -->
+    <bean name="/pages/datadir/dataDirList" class="cn.grgbanking.feeltm.datadir.webapp.DataDirListAction" />
+
+    <!-- add or Update -->
+    <bean name="/pages/datadir/dataDirSave" class="cn.grgbanking.feeltm.datadir.webapp.DataDirSaveAction" />
+    <bean name="/pages/datadir/DatadirSortSave" class="cn.grgbanking.feeltm.datadir.webapp.DatadirSortSaveAction" />
+</beans>
+
+
+
+
+
+
+
+
+

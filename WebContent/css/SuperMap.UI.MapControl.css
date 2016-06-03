@@ -1,0 +1,9 @@
+.zoomRect { position:absolute; display:block; border:2px dashed #336699; z-index:100; }
+.zoomBox_fg { position:absolute; display:block; border:2px dashed white; z-index:100; overflow:hidden }
+.zoomBox_bg { position:absolute; display:block; border:2px dashed black; z-index:100; overflow:hidden }
+
+.logoSuperMap { position:absolute; display:none; cursor:pointer; z-index:30; }
+.logoSuperMap_IE { width:160px; height:24px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/iServerLogo.png', sizingMethod='scale'); }
+
+.superMapDiv{background-color:#D0E4F7;position:absolute;left:800;height:320px;opacity:0.5;filter:alpha(opacity=70);top:50;width:150px;border:gray 2px solid;fontSize:12px;lineHeight:25px;padding:5px;zIndex:100}
+.superShowDiv{background-color:#D0E4F7;}

@@ -1,0 +1,21 @@
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<package name="/pages/overtime" namespace="/pages/overtime" extends="global">
+		<action name="overtimeinfo"
+			class="cn.grgbanking.feeltm.overtime.webapp.OvertimeAction">
+			<result name="input">/pages/overtime/overtime_list.jsp</result>
+			<result name="query">/pages/overtime/overtime_list.jsp</result>
+			<result name="edit">/pages/overtime/overtime_edit.jsp</result>
+			<result name="add">/pages/overtime/overtime_add.jsp</result>
+			<result name="show">/pages/overtime/overtime_show.jsp</result>
+			<result name="areason">/pages/overtime/overtime_areason.jsp</result>
+			<result name="audit">/pages/overtime/overtime_aduit.jsp</result>
+			<result name="overtimeList">/pages/hols/overtimeAndLeaveList.jsp</result>
+		</action>
+	</package>
+	
+</struts>
+

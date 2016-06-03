@@ -1,0 +1,215 @@
+body{
+	margin-top: 20px;
+	background-color: #f9f9f9;
+}
+ul{
+	list-style-type:none;
+}
+.personal-data-item{
+	float:left;
+	width:24.6%;
+	height:100%;
+	min-width:230px;
+	text-align:center;
+}
+.personal-data{
+	height:100px;
+	width:100%;
+	min-width:1000px;
+}
+.personal-data-item-img{
+    float: left;
+    margin-left: 70px;
+}
+.personal-data-item-num{
+    float: left;
+    line-height: 30px;
+    text-align:left;
+    padding-left:15px;
+    font-weight:bold;
+    color:#666;
+}
+.clear{
+	clear:both;
+}
+.main-data{
+	width:100%;
+	min-width:1060px;
+	height:1400px;
+	min-height:1300px;
+}
+.main-data-ul{
+	margin-left:-40px;
+}
+.main-data-ul-li{
+	height:400px;
+	width:45%;
+	min-width:500px;
+	margin:15px;
+	float:left;
+}
+#weekplan-data-block{
+	height:400px;
+	width:92%;
+	min-width:1030px;
+	margin:15px;
+	float:left;
+}
+.workhours-title
+,.daylog-title
+,.points-title
+,.attendance-title
+,.weekplan-title{
+	height:10%;
+	line-height:40px;
+	padding-left:16px;
+	font-weight:bold;
+	color:#fff;
+}
+.workhours-title{
+	background-color: #9e4b9d;
+}
+.daylog-title{
+	background-color: #fdb515;
+}
+.points-title{
+	background-color: #17b7c7;
+}
+.attendance-title{
+	background-color: #e2577e;
+}
+.weekplan-title{
+	position:relative;
+	line-height:10%;
+	height:10%;
+}
+.weekplan-title-img{
+	position:absolute;
+	left:0;
+	top:0;
+	z-index:1;
+}
+.weekplan-title-word{
+	position:absolute;
+	left:0;
+	top:0;
+	z-index:2;
+	height:40px;
+	line-height:40px;
+	padding-left:16px;
+}
+
+.workhours-data
+,.daylog-data
+,.points-data
+,.attendance-data
+,.weekplan-data{
+	height:90%;
+	background-color: #fff;
+}
+.workhours-data{
+	
+}
+.workhours-chart{
+	height:100%;
+	width:100%;
+}
+.daylog-data{
+	
+}
+.points-data{
+	
+}
+.point-list-row{
+	line-height:60px;
+	height:60px;
+}
+.point-list-row div{
+	float:left;
+	text-align:left;
+	line-height:60px;
+}
+.attendance-data{
+	
+}
+.project-name,.project-task,.progress,.time-number{
+	float:left;
+	text-align:left;
+}
+.project-name{
+	width:15%;
+	padding-left:16px;
+}
+.project-task{
+	width:30%;
+}
+.progress{
+	width:20%;
+}
+.time-number{
+	width:10%;
+}
+/*日历的日期居中显示*/
+.fc-ltr .fc-basic-view .fc-day-number{
+	text-align:center;vertical-align:middle;height:2.6em;
+}
+/*日历的高度再调整*/
+.fc-basic-view tbody .fc-row{
+	min-height:2.6em;
+}
+.fc-day-grid-event > .fc-content{
+	height: 0px;
+}
+/*隐藏日历的翻页按钮*/
+.fc-toolbar .fc-left,.fc-toolbar .fc-right{
+	display:none;	
+}
+/* 日历标题居中 */
+.fc-toolbar{
+	margin-bottom:0;
+	padding:.5em;
+}
+h2{
+	font-size:14px;
+}
+.weekplan-data-header{
+	height:60px;
+	line-height : 60px;
+	color:#00AEEF;
+	font-weight:bold;
+}
+.weekplan-data .weekplan-data-list div,.weekplan-data .weekplan-data-header div{
+	height:60px;
+}
+.weekplan-data-list{
+	height:300px;
+	overflow-y:scroll;
+}
+.weekplan-data-list div, .point-list-row{
+	border-bottom:1px #eee solid;
+}
+.weekplan-data tr{
+	height:50px;
+}
+#tips-shade{
+	 display:none;
+	 z-index:30;
+	 position:absolute;
+	 top:0;
+}
+#tips{
+	display:none;
+	 z-index:31;
+	 border:1px #999 solid;
+	 position:absolute;
+	 top:0;
+}
+/* 进度条 */
+.progress-bar{
+	background-color:#ccc;
+	height:20px;
+}
+.progress-subbar{
+	 background-color:#00ADEF;
+	 height:20px;
+}

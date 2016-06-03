@@ -1,0 +1,17 @@
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/org"  namespace="/pages/org" extends="global">
+		<action name="orgMgr" class="cn.grgbanking.feeltm.org.webapp.OrgInfoAction">
+			<result name="list">/pages/org/orgInfo_list.jsp</result>
+			<result name="list2">/pages/org/orgInfo_list.jsp</result>
+			<result name="insert">/pages/org/orgInfo_insert.jsp</result>	
+			<result name="modify">/pages/org/orgInfo_update.jsp</result>
+			
+			<result name="update">/pages/org/orgInfo_update.jsp</result>
+		</action>
+	</package>
+		
+</struts>
+

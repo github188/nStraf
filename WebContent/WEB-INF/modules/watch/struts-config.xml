@@ -1,0 +1,40 @@
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/watch" namespace="/pages/watch" extends="global">
+		<action name="transHourInfo"
+			class="cn.grgbanking.feeltm.watch.webapp.TransHourInfoAction">
+			<result name="query">/pages/watch/transHourInfo_list.jsp</result>
+			<result name="edit">/pages/watch/transHourInfo_edit.jsp</result>
+			<result name="add">/pages/watch/transHourInfo_add.jsp</result>
+			<result name="show">/pages/watch/transHourInfo_show.jsp</result>
+		</action>
+
+		<action name="transBanknoteSeqHour"
+			class="cn.grgbanking.feeltm.watch.webapp.TransBanknoteSeqHourAction">
+			<result name="query">/pages/watch/transBanknoteSeqHour_list.jsp</result>
+			<result name="edit">/pages/watch/transBanknoteSeqHour_edit.jsp</result>
+			<result name="add">/pages/watch/transBanknoteSeqHour_add.jsp</result>
+			<result name="show">/pages/watch/transHourInfo_show.jsp</result>
+			<result name="showPic">/pages/watch/transBanknoteSeqHour_showPic.jsp</result>
+		</action>
+		<action name="tranAbnoinfo"
+			class="cn.grgbanking.feeltm.watch.webapp.TranAbnoinfoAction">
+			<result name="query">/pages/watch/tranAbnoinfo_list.jsp</result>
+			<result name="show">/pages/watch/tranAbnoinfo_show.jsp</result>
+			<result name="list">/pages/watch/tranAbnoinfo_list_accountNo.jsp</result>
+		</action>
+		<action name="tranCallbackAbnoinfo"
+			class="cn.grgbanking.feeltm.watch.webapp.TranCallbackAbnoinfoAction">
+			<result name="query">/pages/watch/tranCallbackAbnoinfo_list.jsp</result>
+			<result name="show">/pages/watch/tranCallbackAbnoinfo_show.jsp</result>
+		</action>
+		<action name="tranEspeciinfo"
+			class="cn.grgbanking.feeltm.watch.webapp.TranEspeciinfoAction">
+			<result name="query">/pages/watch/tranEspeciinfo_list.jsp</result>
+			<result name="show">/pages/watch/tranEspeciinfo_show.jsp</result>
+		</action>
+	</package>
+</struts>
+

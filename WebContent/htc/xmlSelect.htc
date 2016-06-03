@@ -1,0 +1,137 @@
+<!--
+actUrl: <need>
+args:  <default:''>
+ntext: <default:0>
+nvalue: <default:1>
+beforeOption:<default:false -not include>
+defaultValue:<default:'' -ignore >
+xpath: <default://ROWSET/ROW>
+-->
+
+<PUBLIC:COMPONENT>
+
+<PUBLIC:ATTACH EVENT="oncontentready" ONEVENT="fnInit()"/>
+
+<script language="javascript">
+var xmlhttpHelper = new ActiveXObject( "Microsoft.XMLHTTP" );
+var xmlhttpHelper_selobj;
+var xmlhttpHelper_path;
+var xmlhttpHelper_ntext;
+var xmlhttpHelper_nvalue;
+var xmlhttpHelper_async;
+var xmlhttpHelper_choose;
+var xmlhttpHelper_xmlsrc;
+var defaultValue;
+var isTree;
+function xmlhttpHelper_onReadyStateChange(){
+	if(xmlhttpHelper.readyState != 4)return;
+	if(xmlhttpHelper_xmlsrc)element.xmlsrc = xmlhttpHelper.responseXML;
+	createOptionsFromXml(xmlhttpHelper_selobj,xmlhttpHelper.responseText,xmlhttpHelper_path,xmlhttpHelper_ntext,xmlhttpHelper_nvalue);
+	if(loadingHide)loadingHide();
+}
+
+// to load the xml file
+function xmlhttpHelper_load(xml_url){
+	xmlhttpHelper.onreadystatechange = xmlhttpHelper_onReadyStateChange;
+	xmlhttpHelper.open( "POST", xml_url , xmlhttpHelper_async );
+	xmlhttpHelper.setRequestHeader("Content-Type","text/xml");
+	xmlhttpHelper.send();
+	if(loadingShow)loadingShow();
+}
+
+
+//// create select options from a xml file given the path and column num
+function createOptionsFromXml(obj,xml,path,nText,nValue){
+	removeAllOptions(obj);
+	if(path==null)return;
+	var _dom = new ActiveXObject("Microsoft.XMLDOM");
+	_dom.loadXML(xml);
+	var _nodes = _dom.selectNodes(path);
+	
+	if(xmlhttpHelper_choose+"" != "false"){
+		_option = document.createElement("OPTION");		
+		_option.text = xmlhttpHelper_choose;
+		_option.value ="";
+		obj.options.add(_option);
+	}
+	
+	for(var i=0; i<_nodes.length; i++){
+		if(_nodes[i].text == "")continue;
+		
+		_option = document.createElement("OPTION");	
+		
+		if(isTree){
+		  _option.text =DealTree(_nodes[i].childNodes);
+		}else{
+ 		  _option.text = _nodes[i].childNodes[nText].text;
+		}
+		_option.value = _nodes[i].childNodes[nValue].text
+		
+		obj.options.add(_option);
+	}
+
+	defaultValue = element.defaultValue ? element.defaultValue : "";
+	if(defaultValue != "")
+		element.value = defaultValue;
+		
+}
+//for tree 
+function DealTree(xmlNodes)
+{
+ var strText=xmlNodes[0].text
+ var iLevel=xmlNodes[2].text
+ if(iLevel==0)
+    return strText;
+    
+ strText="|--"+strText  
+ for(var i=0;i<iLevel;i++)
+ {
+    strText=" "+strText;
+ }
+ return strText;  
+}
+
+// remove all options of the obj
+function removeAllOptions(obj){
+	while(obj.options.length>0){
+		obj.options.remove(0);
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////////
+function makeSelectFromLoadXml(sel_obj,xml_url,path,ntext,nvalue){
+	xmlhttpHelper_selobj = sel_obj;
+	xmlhttpHelper_path = path;
+	xmlhttpHelper_ntext = ntext;
+	xmlhttpHelper_nvalue = nvalue;
+	
+	xmlhttpHelper_load(xml_url);
+}
+
+
+function fnInit(){
+        
+        isTree=false;
+	var actUrl = element.actUrl; 
+	var htcClassName=element.className
+	if(actUrl==null){
+ 	    if (htcClassName== "dataDir"){
+	       actUrl="/nStraf/datadir/getChildXMLByPath.do?path="+element.args
+	    }
+	    else{
+	       alert("Pleas set actUrl!");
+	    }	    
+	}	
+	
+	var xpath = element.xpath ? element.xpath : "//ROWSET/ROW";
+	var ntext = element.ntext ? element.ntext : 0;
+	var nvalue = element.nvalue ? element.nvalue : 1;
+	
+	xmlhttpHelper_async = element.async ? element.async : true;
+	xmlhttpHelper_choose = element.beforeOption ? element.beforeOption : "false";
+	xmlhttpHelper_xmlsrc = element.xmlsrc ? true : false;
+	makeSelectFromLoadXml(element, actUrl, xpath, ntext, nvalue);
+}
+</script>
+
+</PUBLIC:COMPONENT>

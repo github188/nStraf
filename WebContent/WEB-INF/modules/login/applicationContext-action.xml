@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<!-- 管理后台的Spring Servlet配置文件 -->
+
+<beans default-autowire="byName" default-lazy-init="true">	
+	  <bean name="/Login" class="cn.grgbanking.feeltm.login.webapp.LoginAction"/>
+	  <bean name="/pages/login/Loginlog" class="cn.grgbanking.feeltm.login.webapp.LoginAction"/>
+</beans>
+
+
+
+
+
+

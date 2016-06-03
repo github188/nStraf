@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+
+<struts>
+
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.locale" value="zh_CN" />
+	<constant name="struts.i18n.reload" value="false" />
+	<constant name="struts.devMode" value="false" />
+	<!-- <constant name="struts.devMode" value="true" /> -->
+	<constant name="struts.configuration.xml.reload" value="false" />
+	<constant name="struts.custom.i18n.resources"
+		value="ApplicationResources,
+    ApplicationResources_um,
+    ApplicationResources_org,
+    ApplicationResources_datadir,
+    ApplicationResources_geog,
+    ApplicationResources_menu,
+    ApplicationResources_msg,
+	ApplicationResources_tml,
+	ApplicationResources_watch,
+	ApplicationResources_rule,
+	ApplicationResources_audit,
+	ApplicationResources_analyse,
+	ApplicationResources_staffManager,
+	ApplicationResources_notify,
+	ApplicationResources_hols,
+	ApplicationResources_prjContract
+    " />
+	<constant name="struts.action.extension" value="action,do," />
+	<!-- 动态调用 -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+
+	<constant name="struts.codebehind.defaultPackage" value="person" />
+
+	<constant name="struts.serve.static" value="true" />
+	<constant name="struts.serve.static.browserCache" value="false" />
+
+
+	<include file="struts-default.xml" />
+	<include file="../modules/login/struts-config.xml" />
+	<include file="../modules/um/struts-config.xml" />
+	<include file="../modules/org/struts-config.xml" />
+	<include file="../modules/logmgr/struts-config.xml" />
+	<include file="../modules/menu/struts-config.xml" />
+	<include file="../modules/datadir/struts-config.xml" />
+	<include file="../modules/tmlInfo/struts-config.xml" />
+	<include file="../modules/transmgr/struts-config.xml" />
+	<include file="../modules/watch/struts-config.xml" />
+	<include file="../modules/audit/struts-config.xml" />
+	<include file="../modules/rule/struts-config.xml" />
+	<include file="../modules/analyse/struts-config.xml" />
+	<include file="../modules/report/struts-config.xml" />
+	<include file="../modules/month/struts-config.xml" />
+	<include file="../modules/week/struts-config.xml" />
+	<include file="../modules/day/struts-config.xml" />
+	<include file="../modules/tool/struts-config.xml" />
+	<include file="../modules/server/struts-config.xml" />
+	<include file="../modules/behavior/struts-config.xml" />
+	<include file="../modules/auto/struts-config.xml" />
+	<include file="../modules/prjparams/struts-config.xml" />
+	<include file="../modules/prjdb/struts-config.xml" />
+	<include file="../modules/prjdetail/struts-config.xml" />
+	<include file="../modules/devdetail/struts-config.xml" />
+	<include file="../modules/prjtest/struts-config.xml" />
+	<include file="../modules/designer/struts-config.xml" />
+	<include file="../modules/atm/struts-config.xml" />
+	<include file="../modules/suggestion/struts-config.xml" />
+	<include file="../modules/finance/struts-config.xml" />
+	<include file="../modules/trip/struts-config.xml" />
+	<include file="../modules/course/struts-config.xml" />
+	<include file="../modules/newEmployeeManage/struts-config.xml" />
+	<include file="../modules/ec/struts-config.xml" />
+	<include file="../modules/train/struts-config.xml" />
+	<include file="../modules/meeting/struts-config.xml" />
+	<include file="../modules/caseanalyse/struts-config.xml" />
+	<include file="../modules/performance/struts-config.xml" />
+	<include file="../modules/instance/struts-config.xml" />
+	<include file="../modules/autoOa/struts-config.xml" />
+	<include file="../modules/personaldevelop/struts-config.xml" />
+	<include file="../modules/postremove/struts-config.xml" />
+	<include file="../modules/kpipoint/struts-config.xml" />
+	<include file="../modules/stufftandability/struts-config.xml" />
+	<include file="../modules/dailydeed/struts-config.xml" />
+	<include file="../modules/TestRecord/struts-config.xml" />
+	<include file="../modules/sysinfo/struts-config.xml" />
+	<include file="../modules/projectquality/struts-config.xml" />
+	<include file="../modules/overtime/struts-config.xml" />
+	<include file="../modules/monthMission/struts-config.xml" />
+	<include file="../modules/totalPrice/struts-config.xml" />
+	<include file="../modules/totalPriceHist/struts-config.xml" />
+	<include file="../modules/certification/struts-config.xml" />
+	<include file="../modules/autotestrecord/struts-config.xml" />
+	<include file="../modules/autotestrecord/struts-config.xml" />
+	<include file="../modules/expense/struts-config.xml" />
+	<include file="../modules/prjContract/struts-config.xml" />
+	<!-- 20140421 wtjiao 增加人员入职模块配置 -->
+	<include file="../modules/staffEntry/struts-config.xml" />
+	<!-- 2014-4-24 lhy员工信息 -->
+	<include file="../modules/staff/struts-config.xml" />
+	<!-- 2014-4-29 lhy通知信息 -->
+	<include file="../modules/notify/struts-config.xml" />
+	<!-- 添加通讯录管理   by wjie5 2014.04.29 -->
+	<include file="../modules/contact/struts-config.xml" />
+	<!-- 2014-4-30 wtjiao 工作日志模块配置 -->
+	<include file="../modules/daylog/struts-config.xml" />
+	<!-- 2014-5-20 wtjiao 项目计划 -->
+	<include file="../modules/projectplan/struts-config.xml" />
+	<!-- 假期数据 -->
+	<include file="../modules/userhols/struts-config.xml" />
+	<!-- 2014-5-13 wtjiao 周报模块配置 -->
+	<include file="../modules/weeklog/struts-config.xml" />
+	<!-- 请假 -->
+	<include file="../modules/leave/struts-config.xml" />
+	<!-- 工时统计 -->
+	<include file="../modules/workhour/struts-config.xml" />
+	<!-- 固定资产管理 -->
+	<include file="../modules/fixasset/struts-config.xml" />
+	<!--2014-5-20 xwshan 商机管理  -->
+	<include file="../modules/prjchance/struts-config.xml"/>
+	<!-- 客户管理 -->
+	<include file="../modules/custom/struts-config.xml"/>
+
+	<!-- 移动签到 -->
+	<include file="../modules/signrecord/struts-config.xml"/>
+
+		<!-- 项目风险管理 -->
+	<include file="../modules/prjrisk/struts-config.xml"/>
+	<include file="../modules/project/struts-config.xml"/>
+	
+	<!-- 20141131 wtjiao 公共类，不要再删了 -->
+	<include file="../modules/common/struts-config.xml"/>
+	
+	<!-- 项目周计划 -->
+	<include file="../modules/projectweekplan/struts-config.xml"/>
+	
+	<!-- 借款登记 -->
+	<include file="../modules/borrow/struts-config.xml"/>
+	
+	<!-- 考勤统计 -->
+	<include file="../modules/attendance/struts-config.xml"/>
+	<include file="../modules/client/struts-config.xml"/>
+	<include file="../modules/loglistener/struts-config.xml"/>
+	
+	<!--项目监控-->
+	<include file="../modules/prjMonitor/struts-config.xml"/>
+	
+	<!--积分中心-->
+	<include file="../modules/integralCenter/struts-config.xml"/>
+	
+	<!--人日统计-->
+	<include file="../modules/personDay/struts-config.xml"/>
+	
+	<!--用户绑定-->
+	<include file="../modules/common4Wechat/struts-config.xml"/>
+	
+	<!--对微信的接口-->
+	<include file="../modules/common4Wechat/struts-config.xml"/>
+	
+	<!--公共模块手机端web端公共的平台  月度管理报告 -->
+	<include file="../modules/monthlyManage/struts-config.xml"/>
+	
+	<!--公共模块手机端web端公共的平台  个人首页 -->
+	<include file="../modules/personalHome/struts-config.xml"/>
+	
+	<!--公共模块手机端web端公共的平台  领导首页 -->
+	<include file="../modules/leaderHomePage/struts-config.xml"/>
+	<!--建议与反馈 -->
+	<include file="../modules/adviceAndResponse/struts-config.xml"/>
+	<!--成本控制 -->
+	<include file="../modules/costControl/struts-config.xml"/>
+	
+	<!-- **********************   培训模块 配置  ******************************** -->
+	
+	<!--培训发起 -->
+	<include file="../modulesTraining/lunch/struts-config.xml"/>
+	<!--培训报名设置-->
+	<include file="../modulesTraining/enroll/struts-config.xml"/>
+	<!--模板设置 -->
+	<include file="../modulesTraining/moduleSet/struts-config.xml"/>
+	<!--评估发放 -->
+	<include file="../modulesTraining/moduleDistribute/struts-config.xml"/>
+	<!--课程类别 -->
+	<include file="../modulesTraining/courseType/struts-config.xml"/>
+	<!--年度计划 -->
+	<include file="../modulesTraining/annualPlan/struts-config.xml"/>
+	<!--学员管理 -->
+	<include file="../modulesTraining/traineemanage/struts-config.xml"/>
+	<!-- ************************   培训模块   ********************************** -->
+	
+	
+	<package name="global" extends="struts-default">
+		<global-results>
+			<result name="message">/WEB-INF/common/message.jsp</result>
+			<result name="error">/WEB-INF/common/message.jsp</result>
+			<result name="msgBox">/WEB-INF/common/msgBox.jsp</result>
+			<result name="isTimeOut">/WEB-INF/common/isTimeOut.jsp</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping result="error" exception="java.lang.Exception" />
+		</global-exception-mappings>
+	</package>
+
+</struts>
+

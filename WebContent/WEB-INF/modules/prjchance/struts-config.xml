@@ -1,0 +1,17 @@
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/prjchance" namespace="/pages/prjchance" extends="global">
+		<action name="prjChanceInfo"
+			class="cn.grgbanking.feeltm.prjchance.webapp.PrjChanceAction">
+			<result name="listsuccess">/pages/prjchance/list.jsp</result>
+			<result name="edit">/pages/prjchance/edit.jsp</result>
+			<result name="add">/pages/prjchance/add.jsp</result>
+			<result name="view">/pages/prjchance/view.jsp</result>
+		</action>
+
+	
+
+	</package>
+</struts>

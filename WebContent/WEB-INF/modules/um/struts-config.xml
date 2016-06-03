@@ -1,0 +1,96 @@
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/pages/um"  namespace="/pages/um" extends="global">
+		<action name="sysUserInfo"  class="cn.grgbanking.feeltm.um.webapp.SysUserInfoAction">
+			
+			<result name="list" >/pages/um/sysUserInfo.jsp</result>
+			<result name="update">/pages/um/updateSysUserInfo.jsp</result> 	
+			<result name="insert">/pages/um/insertSysUserInfo.jsp</result> 	
+			<result name="view">/pages/um/viewSysUserInfo.jsp</result> 	
+			<result name="usrUsrgrgList">/pages/um/selectOneSysUser.jsp</result> 	
+			<result name="msgBox">/WEB-INF/common/msgBox.jsp</result>
+			
+		</action>
+		
+		 <action  name="sysUserGroup" class="cn.grgbanking.feeltm.um.webapp.SysUserGroupAction">    
+		      <result name="list">/pages/um/sysUserGroupList.jsp</result>
+		      <result name="sysuserlist">/pages/um/sysUserInfo.jsp</result>
+		      <result name="userList">/pages/um/selectSysUser.jsp</result>
+		      <result name="userproject">/pages/project/selectuser.jsp</result>
+		     
+	     </action>   
+
+		<action name="userRole" class="cn.grgbanking.feeltm.um.webapp.UserRoleInfoAction">
+		      <result name="list"> /pages/um/userRoleInfoList.jsp</result>
+		      <result name="insert"> /pages/um/insertUserRoleInfo.jsp</result>
+		      <result name="update"> /pages/um/updateUserRoleInfo.jsp </result>
+		     
+	     </action>
+	     
+	      <action name="userGroup" class="cn.grgbanking.feeltm.um.webapp.UserGroupInfoAction">     
+		      <result name="list"> /pages/um/userGroupInfoList.jsp</result>
+		      <result name="insert"> /pages/um/insertUserGroupInfo.jsp</result>
+		      <result name="update">/pages/um/updateUserGroupInfo.jsp</result>
+		     
+	     </action>  
+	     
+	     <action name="userRolePurview" class="cn.grgbanking.feeltm.um.webapp.UserRolePurviewAction">	
+			<result name="success">/pages/um/rolepurview.jsp</result>  
+		      <result name="list"> /pages/um/userRoleInfoList.jsp</result>
+		      <result name="insert"> /pages/um/insertUserRoleInfo.jsp</result>
+		      <result name="update"> /pages/um/updateUserRoleInfo.jsp</result>
+	     </action> 
+	     
+	     <action name="userGroupRole" class="cn.grgbanking.feeltm.um.webapp.UserGroupRoleAction">    
+		      <result name="list">/pages/um/userGroupRoleList.jsp</result>
+		      <result name="grplist">/pages/um/userGroupInfoList.jsp</result>
+	     </action>    
+	      
+	     <action name="pwdSave" class="cn.grgbanking.feeltm.um.webapp.PwdSaveAction">    
+		      <result name="success">/WEB-INF/common/msgBox.jsp</result>
+		      <result name="fail">/WEB-INF/common/msgBox.jsp</result>
+	     </action>     
+	      
+	</package>
+		
+	<!--  
+		 <action path="/pages/um/userRole" scope="request" type="org.springframework.web.struts.DelegatingActionProxy"
+			name="userRoleForm"  validate="false">    
+		      <forward name="list" path="/pages/um/userRoleInfoList.jsp"/>
+		      <forward name="insert" path="/pages/um/insertUserRoleInfo.jsp"/>
+		      <forward name="update" path="/pages/um/updateUserRoleInfo.jsp"/> 
+	     </action>  
+	    
+		 <action path="/pages/um/userGroup" scope="request" type="org.springframework.web.struts.DelegatingActionProxy"
+			name="userGroupForm"  validate="false">     
+		      <forward name="list" path="/pages/um/userGroupInfoList.jsp"/>
+		      <forward name="insert" path="/pages/um/insertUserGroupInfo.jsp"/>
+		      
+		      <forward name="update" path="/pages/um/updateUserGroupInfo.jsp"/>
+	     </action>   
+	      
+		
+		 <action path="/pages/um/userRolePurview" scope="request" type="org.springframework.web.struts.DelegatingActionProxy"
+			  validate="false"> 
+			<forward name="success" path="/pages/um/rolepurview.jsp"/>   
+		      <forward name="list" path="/pages/um/userRoleInfoList.jsp"/>
+		      <forward name="insert" path="/pages/um/insertUserRoleInfo.jsp"/>
+		      <forward name="update" path="/pages/um/updateUserRoleInfo.jsp"/>
+	     </action>   
+
+		
+		
+		 <action path="/pages/um/userGroupRole" scope="request" type="org.springframework.web.struts.DelegatingActionProxy"
+			name="userGroupRoleForm"  validate="false">    
+		      <forward name="list" path="/pages/um/userGroupRoleList.jsp"/>
+		      <forward name="grplist" path="/pages/um/userGroupInfoList.jsp"/>
+	     </action>   
+		
+		
+		
+			     
+	-->	
+</struts>
+

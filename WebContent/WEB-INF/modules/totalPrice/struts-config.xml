@@ -1,0 +1,22 @@
+<!DOCTYPE struts PUBLIC    
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<package name="/pages/totalPrice" namespace="/pages/totalPrice" extends="global">
+		<action name="totalPriceinfo"
+			class="cn.grgbanking.feeltm.totalPrice.webapp.TotalPriceAction">
+			<result name="input">/pages/totalPrice/totalPrice_list.jsp</result>
+			<result name="query">/pages/totalPrice/totalPrice_list.jsp</result>
+			<result name="edit">/pages/totalPrice/totalPrice_edit.jsp</result>
+			<result name="add">/pages/totalPrice/totalPrice_add.jsp</result>
+			<result name="show">/pages/totalPrice/totalPrice_show.jsp</result>
+			<result name="showMS">/pages/totalPrice/totalPrice_showMS.jsp</result>
+			<result name="selmonth">/pages/totalPrice/totalPrice_selmonth.jsp</result>
+			<result name="selmonthLock">/pages/totalPrice/totalPrice_selmonthLock.jsp</result>
+			<result name="modifybat">/pages/totalPrice/totalPrice_modifybat.jsp</result>
+		</action>
+	</package>
+	
+</struts>
+
